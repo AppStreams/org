@@ -1,0 +1,17 @@
+﻿{
+  // Abstract base
+  "@type": "ContainerType",
+  "@id": "http://appstreams.org/container-types/[id]",
+  "reusable": true,
+  "disposable": false,
+  "color": "green",
+  "lid_color": "white",
+  "sizes": [ 240 ],
+  "shape": "wheelie_bin",
+  "materials": [
+    {
+      "name": "mixed recyclables",
+      "@id": "/api/material-streams/mixed-recyclables"
+    }
+  ]
+}

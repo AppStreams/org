@@ -1,0 +1,11 @@
+﻿{
+  "@type": "ContainerType",
+  "id": "123",
+  "barcode": null,
+  "RFID": null,
+  "status": null,
+
+  // Reference to a Feature Type Instance
+  "type": "http://appstreams.org/waste/feature-type/1"
+  }
+}

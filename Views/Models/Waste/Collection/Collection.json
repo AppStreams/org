@@ -1,0 +1,112 @@
+﻿{
+  "id": "",
+  "services": [
+    {
+      "@type": "WasteService",
+      "@id": "http://appstreams.org/services/waste/collection",
+      "feature_types": [
+        {
+          "color": "brown",
+          "shape": "wheelie_bin",
+          "materials": [
+            {
+              "@id": "http://appstreams.org/models/waste/materials/food-waste",
+              "name": "Food waste"
+            },
+            {
+              "@id": "http://appstreams.org/models/waste/materials/flowers",
+              "name": "Flowers"
+            },
+            {
+              "@id": "http://appstreams.org/models/waste/materials/plants",
+              "name": "Plants"
+            },
+            {
+              "@id": "http://appstreams.org/models/waste/materials/branches",
+              "name": "Branches"
+            },
+            {
+              "@id": "http://appstreams.org/models/waste/materials/grass-clippings",
+              "name": "Grass Clippings"
+            },
+            {
+              "@id": "http://appstreams.org/models/waste/materials/hedge-trimmings",
+              "name": "Hedge Trimmings"
+            },
+            {
+              "@id": "http://appstreams.org/models/waste/materials/leaves",
+              "name": "Leaves"
+            }
+          ],
+          "@type": "ContainerType"
+        }
+      ],
+      "name": "Brown Bin",
+      "description": "Please put your recycling box on the street.",
+      "esd_url": "http://id.esd.org.uk/service/1130",
+      "frequency": {
+        "@type": "Schedule",
+        "startDate": "2017-01-01",
+        "endDate": "2017-12-31",
+        "repeatFrequency": "P14D",
+        "exceptDates": [
+          "2017-12-31",
+          "2017-12-31"
+        ]
+      },
+      "last_collections": [
+        {
+          "@type": "EmptyBinTask",
+          "start_date": "2014-05-23T20:00Z",
+          "features": [
+            {
+              "@type": "WasteContainer",
+              "id": "2140541",
+              "status": "In use",
+              "size": 240,
+              "@id": "http://example.com/feature-types/1"
+            }
+          ]
+        }
+      ],
+      "next_collections": [
+        {
+          "start_date": "2014-05-23T20:00Z",
+          "features": [
+            {
+              "status": "in_service",
+              "id": "2140541",
+              "@id": "http://example.com/feature-types/2",
+              "@type": "WasteContainer",
+              "size": 240
+            }
+          ],
+          "@type": "EmptyBinTask"
+        }
+      ],
+      "available_channel": {
+        "@type": "ServiceChannel",
+        "name": "Household waste and street maintenance",
+        "service_phone": {
+          "@type": "ContactPoint",
+          "telephone": "0123456789",
+          "email": "waste@example.gov.uk"
+        },
+        "service_url": "http://www.example.gov.uk/waste"
+      },
+      "service_area": {
+        "@type": "AdministrativeArea",
+        "name": "Anytown"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Example Council",
+        "url": "http://www.example.gov.uk"
+      },
+      "service_operator": {
+        "@type": "Organization",
+        "name": "Example Waste Operator Co"
+      }
+    }
+  ]
+}

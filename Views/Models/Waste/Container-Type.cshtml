@@ -1,0 +1,140 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h1>Waste - Container Type</h1>
+<p>
+    An abstract type that represents a type of container. Defined <a href="https://communitiesuk.github.io/waste-service-standards/models/waste-container-type.html">here</a>.
+</p>
+
+<p>
+    This is the base definition of a type of container and is used by a <a href="https://communitiesuk.github.io/waste-service-standards/models/feature-type.html">Feature Type</a>.
+</p>
+
+<p>
+    <h3>http://appstreams.org/models/Waste/ContainerType</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Expected Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th colspan="3">
+                    Properties from ...
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @@type
+                </td>
+                <td>
+                    ContainerType
+                </td>
+                <td>
+                    The type of this base class.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @@id
+                </td>
+                <td>
+                    <a href="http://schema.org/URL">URL</a>
+                </td>
+                <td>
+                    A unique identifier for this container type.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    reusable
+                </td>
+                <td>
+                    <a href="https://schema.org/Boolean">Boolean</a>
+                </td>
+                <td>
+                    A true/false indicating whether this container can be reused.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    disposable
+                </td>
+                <td>
+                    <a href="https://schema.org/Boolean">Boolean</a>
+                </td>
+                <td>
+                    A true/false indicating whether this container is disposable or one-time use (e.g. a bag).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    color
+                </td>
+                <td>
+                    <a href="https://schema.org/color">color</a>
+                </td>
+                <td>
+                    The color of the container.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    lid_color
+                </td>
+                <td>
+                    <a href="https://schema.org/color">color</a>
+                </td>
+                <td>
+                    The color of the lid which may differ from the body.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    sizes
+                </td>
+                <td>
+                    Array of <a href="https://schema.org/Integer">Integer</a>
+                </td>
+                <td>
+                    The available sizes of containers of this type.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    shape
+                </td>
+                <td>
+                    <a href="https://schema.org/Text">Text</a>
+                </td>
+                <td>
+                    The shape or type of the container.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    materials
+                </td>
+                <td>
+                    Array of <a href="https://appstreams.org/Models/Waste/Material">Material</a>
+                </td>
+                <td>
+                    The materials it stores.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>
