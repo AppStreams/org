@@ -1,0 +1,78 @@
+﻿@{ViewData["Title"] = "Waste Service Events";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    This provides details on Waste Collection Service Events.
+</p>
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Event Reminders
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <p>
+            Managing Waste Event reminders for individuals and locations.
+        </p>
+        <ul>
+            <li><a href="#event-createReminderEvent">A scheduled collection reminder for an individual</a></li>
+        </ul>
+
+          @Html.Partial("Waste/Services/reminderEvent")
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#headingTwo" aria-expanded="false" aria-controls="headingTwo">
+          <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Event Management
+        </button>
+      </h5>
+    </div>
+
+    <div id="headingTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <p>
+            Events related to waste collection schedules and collection services.
+        </p>
+        <ul>
+            <li><a href="#event-scheduledCollectionEvent">A scheduled collection reminder for a location</a></li>
+        </ul>
+          @Html.Partial("Waste/Services/eventTypes")
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#headingThree" aria-expanded="false" aria-controls="headingThree">
+          <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Event Types
+        </button>
+      </h5>
+    </div>
+
+    <div id="headingThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <p>
+            Events related to waste collection schedules and collection services.
+        </p>
+        <ul>
+            <li><a href="#event-scheduledCollectionEvent">A scheduled collection reminder for a location</a></li>
+        </ul>
+          @Html.Partial("Waste/Services/eventTypes")
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>
+    <div><a href="/events/Waste" class="text-info">&lt;&lt; Waste Events</a>  - <a href="/events" class="text-info">All Events</a></div>
+</p>

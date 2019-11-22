@@ -1,0 +1,569 @@
+﻿{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://appstreams.org/v1"
+    },
+    {
+      "url": "http://appstreams.org/v1"
+    }
+  ],
+  "info": {
+    "description": "This provides Bin Service definition to provide bin collection schedule and next bin collection data.",
+    "version": "1.0.0",
+    "title": "Bin Service",
+    "termsOfService": "http://appstreams.org/privacy/",
+    "contact": {
+      "email": "info@appstreams.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "bin",
+      "description": "Bin Service data",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Waste/Service"
+      }
+    },
+    {
+      "name": "featuretypes",
+      "description": "Bin Features represent the types of Waste Container or specific physical Containers.",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Waste/Services/FeatureTypes"
+      }
+    },
+    {
+      "name": "servicetypes",
+      "description": "Bin Service Types represent the types of services offered by an authority (and can be reused by other authorities) - this could be a 'Brown and Blue Collection' service which come as a package.",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Waste/Services/ServiceTypes"
+      }
+    }
+  ],
+  "paths": {
+    "/services/Waste/Services?{country}&{postcode}&{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get the list of bin services schedules for the location",
+        "description": "Returns the unique list of collection combinations scheduled for this location. Therefore if Brown and Blue are picked up at the same time, it will return these as a single service instance. If Brown and Blue are picked up this week and Green is next week, that would return two service instances.",
+        "operationId": "getServices",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "query",
+            "description": "The full postcode to get the bin service schedule for",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../../Models/Waste/Service.json#/Service"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/Waste/Services/Between?{country}&{postcode}&{start_date}&{end_date}&{featureTypeId}&{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get the list of bin services scheduled for the location between the start and end date.",
+        "description": "Returns the unique list of collection combinations scheduled for this location between the dates with an optional filter on  the specified feature type.",
+        "operationId": "getServicesBetween",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "query",
+            "description": "The full postcode to get the bin service schedule for",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "description": "The date at which to start at - includes that day.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "description": "The date at which to end at - stops on the specified date.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "featureTypeId",
+            "in": "query",
+            "description": "The featureTypeId to filter on.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../../Models/Waste/Service.json#/Service"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/Waste/Services/Closest?{country}&{postcode}&{date}&{featureTypeId}&{direction}&{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get the list of bin services scheduled for the location closest to the specified date.",
+        "description": "Returns the unique list of collection combinations scheduled for this location closest to the specified date with an optional filter on the specified feature type and direction to search in.",
+        "operationId": "getClosestServices",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "query",
+            "description": "The full postcode to get the bin service schedule for",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "The date at which to search around.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "featureTypeId",
+            "in": "query",
+            "description": "The featureTypeId to filter on.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "description": "The date direction to search in. Before excludes the currect date; after includes the current day; both searches before and after.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "before",
+                "after",
+                "both"
+              ]
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../../Models/Waste/Service.json#/Service"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/Waste/Services/Next?{country}&{postcode}&{featureTypeId}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Gets the next service pickup of any kind scheduled for the location.",
+        "description": "This returns the next service instance, which may be multiple bin pickups if they are picked up at the same time.",
+        "operationId": "getNext",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "query",
+            "description": "The full postcode to get the bin service schedule for",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "featureTypeId",
+            "in": "query",
+            "description": "The featureTypeId to filter by - if not provided it will find the next of any kind.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../Models/Waste/Service.json#/Service"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/Waste/Services/{serviceId}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get full details for the specified bin service schedule for the location",
+        "description": "Returns the specified service schedule for this location.",
+        "operationId": "getService",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "The id for this service.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../Models/Waste/Service.json#/Service"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/Waste/Services/FeatureTypes?{featureTypeIds}&{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "featuretypes"
+        ],
+        "summary": "Explodes details on the specified feature type(s).",
+        "description": "Returns full details on the specified feature type(s).",
+        "operationId": "getFeatureTypes",
+        "parameters": [
+          {
+            "name": "featureTypeIds",
+            "in": "query",
+            "description": "A comma separated list of one or more feature type UUID identifiers to explode.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../../Models/Waste/FeatureType.json#/FeatureType"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/Waste/Services/ServiceTypes?{serviceTypeIds}&{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "servicetypes"
+        ],
+        "summary": "Explodes details on the specified service type(s).",
+        "description": "Returns full details on the specified service type(s) - without any associated schedule or task data.",
+        "operationId": "getServiceTypes",
+        "parameters": [
+          {
+            "name": "serviceTypeIds",
+            "in": "query",
+            "description": "A comma separated list of one or more service type UUID identifiers to explode.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../../Models/Waste/Service.json#/Service"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about AppStreams",
+    "url": "http://appstreams.org"
+  },
+  "components": {
+    "requestBodies": null,
+    "securitySchemes": null
+  }
+}

@@ -1,0 +1,8 @@
+﻿{
+  "@context": "http://appstreams.org/models",
+  "@type": "BS7666Address",
+  "paon": "1",
+  "street": "Acacia Avenue",
+  "locality": "Anytown",
+  "postcode": "AB1 2CD"
+}

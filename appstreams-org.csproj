@@ -18,17 +18,84 @@
     <Folder Include="Views\Models\" />
     <Folder Include="Views\Models\Waste\" />
     <Folder Include="Views\Services\Waste\" />
-    <Folder Include="Views\Services\Waste\Collection\" />
-    <Folder Include="Views\Models\Waste\Material\" />
-    <Folder Include="Views\Models\Waste\Collection\" />
+    <Folder Include="Views\Services\Waste\Services\" />
     <Folder Include="Views\Contact\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="Views\Events\" />
+    <Folder Include="Metadata\" />
+    <Folder Include="wwwroot\Metadata\" />
+    <Folder Include="Views\API\" />
+    <Folder Include="Views\API\Waste\" />
+    <Folder Include="Views\API\Waste\Services\" />
+    <Folder Include="Metadata\Services\Waste\lwsp\" />
+    <Folder Include="wwwroot\Metadata\Services\Waste\lwsp\" />
+    <Folder Include="Views\API\Waste\lwsp\" />
+    <Folder Include="Views\Services\Waste\lwsp\" />
+    <Folder Include="Metadata\Services\Waste\Services\Samples\" />
+    <Folder Include="Shared\" />
+    <Folder Include="Views\Models\Waste\OLD\" />
+    <Folder Include="Views\Models\Waste\OLD\Services\" />
+    <Folder Include="Views\Models\Waste\Material\" />
+    <Folder Include="Views\Models\Waste\ContainerType\" />
+    <Folder Include="Views\Models\Waste\FeatureType\" />
+    <Folder Include="Views\Models\Waste\Feature\" />
+    <Folder Include="Views\Models\Waste\Service\" />
+    <Folder Include="Views\Models\Waste\Task\" />
+    <Folder Include="Views\Events\Waste\" />
+    <Folder Include="Views\Events\Waste\Services\" />
+    <Folder Include="Views\Taxonomies\" />
+    <Folder Include="Views\Models\Place\" />
+    <Folder Include="Views\Models\BS7666Address\" />
+    <Folder Include="Views\Models\Address\" />
+    <Folder Include="Views\Services\Parameters\" />
+    <Folder Include="Metadata\Services\Samples\" />
+    <Folder Include="Views\Models\Event\" />
+    <Folder Include="Views\Services\Events\" />
+    <Folder Include="Views\Models\Waste\Event\" />
+    <Folder Include="Views\Models\EventType\" />
+    <Folder Include="Views\Models\Subscription\" />
+    <Folder Include="Views\API\Events\" />
+    <Folder Include="wwwroot\Metadata\Services\Events\" />
+    <Folder Include="Metadata\Services\Events\" />
+    <Folder Include="Views\Models\Filter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Models\Waste\Container-Type-sample %28copy%29.json" />
     <Content Remove="Views\Models\Waste\Feature-sample %28copy%29.json" />
+    <Content Remove="wwwroot\feather\grid.svg" />
+    <Content Remove="wwwroot\Metadata\Waste\Collection\.swagger-codegen-ignore" />
+    <Content Remove="Views\Models\Waste\OLD\Services\Index.cshtml" />
+    <Content Remove="Views\Events %28copy%29\Waste\Index.cshtml" />
+    <Content Remove="Views\Events %28copy%29\Waste\Services\Index.cshtml" />
+    <Content Remove="Metadata\Models\Event-sample %28copy%29.json" />
+    <Content Remove="Metadata\Models\EventType-sample %28copy%29.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Metadata\Services\test\.swagger-codegen-ignore" />
+    <None Remove="Metadata\Services\test\index.html" />
+    <None Remove="Metadata\Services\test\model.yaml" />
+    <None Remove="Metadata\Services\test\openapi.yaml" />
+    <None Remove="Metadata\Services\test\openapi-basic.yaml" />
+    <None Remove="Metadata\Services\test\openapi-full.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Metadata\Services\test\.swagger-codegen-ignore">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Metadata\Services\test\index.html">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Metadata\Services\test\model.yaml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Metadata\Services\test\openapi.yaml" />
+    <Content Include="Metadata\Services\test\openapi-basic.yaml" />
+    <Content Include="Metadata\Services\test\openapi-full.yaml" />
   </ItemGroup>
 </Project>

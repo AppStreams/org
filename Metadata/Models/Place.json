@@ -1,0 +1,40 @@
+﻿{
+  "Place": {
+    "type": "object",
+    "description": "Maps to the schema.org Place type with some extended fields.",
+    "required": [
+      "type"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models"
+      },
+      "@type": {
+        "type": "string",
+        "default": "Place"
+      },
+      "id": {
+        "type": "string",
+        "description": "A UUID unique identifier for a property."
+      },
+      "address": {
+        "type": "Address",
+        "description": "Postal address of the item."
+      },
+      "uprn": {
+        "type": "string",
+        "description": "A unique identifier for a property."
+      },
+      "usrn": {
+        "type": "string",
+        "description": "A unique identifier for a street."
+      },
+      "geo": {
+        "type": "https://schema.org/geo",
+        "description": "The location in WGS84 datum."
+      }
+    }
+  }
+}

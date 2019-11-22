@@ -1,0 +1,35 @@
+﻿{
+  "EventType": {
+    "type": "object",
+    "required": [
+      "@id",
+      "name"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models"
+      },
+      "@type": {
+        "type": "string",
+        "default": "EventType"
+      },
+      "@id": {
+        "description": "A dereferencable Id for this event type",
+        "type": "string",
+        "format": "uri",
+        "example": "http://appstreams.org/taxonomies/EventTypes/Waste/planned_collection"
+      },
+      "id": {
+        "description": "A unique Id for this event type. This concatenates the lowercase end of the @id with underscores.",
+        "type": "string",
+        "example": "waste_planned_collection"
+      },
+      "name": {
+        "type": "string",
+        "description": "A display name for this event type."
+      }
+    }
+  }
+}

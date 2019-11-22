@@ -1,0 +1,41 @@
+﻿@{ViewData["Title"] = "Common Parameters";}
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    There are a number of parameters that are used across the Services and rather than redefine them every time, they are detailed below and referenced
+    from the appropriate services.
+</p>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Location Parameters
+            </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                @Html.Partial("Parameters/location")
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Paging Parameters
+            </button>
+            </h5>
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                @Html.Partial("Parameters/paging")
+            </div>
+        </div>
+    </div>
+</div>

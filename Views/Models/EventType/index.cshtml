@@ -1,0 +1,57 @@
+﻿@{ViewData["Title"] = "Models - EventType";}
+<h3>@ViewData["Title"]</h3>
+<p>
+   Defines an instance of an Event Type from the <a href="/taxonomies/EventTypes">Event Type Taxonomy</a>
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>EventType</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@id</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>A dereferencable Id for this type instance</td>
+                    </tr>
+                    <tr>
+                        <td><tt>id</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>A unique Id for this event instance</td>
+                    </tr>
+                    <tr>
+                        <td><tt>name</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>A display name for the Event Type.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

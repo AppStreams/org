@@ -1,14 +1,54 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<h1>Waste</h1>
-This represents Waste services and data.
+﻿@{ViewData["Title"] = "Waste Models";}
+<h3>@ViewData["Title"]</h3>
 
-<ul>
-    <li><a href="/models/Waste/Collection">Collection</a></li>
-    <li><a href="/models/Waste/Material">Materials</a></li>
-</ul>
-
-<p>
-    <a href="/models">Models</a>
+<p class="lead">
+    This represents Models used in Waste services.
 </p>
+<div class="row">
+    <div class="col-12">
+        <ul style="padding-left:0;list-style-type: none;">
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/Service">Service</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">This represents Waste collection services and data.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/Task">Task</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">A Task could prepresent any form of work required in the council’s region.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/Feature">Feature</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">A Feature is an instance of a FeatureType - that is, it is a specific bin with its own identifier.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/FeatureType">FeatureType</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">A particular type of container.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/ContainerType">ContainerType</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">An abstract type that represents a type of container.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/Material">Material</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Defines the types of material waste.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste/Event">Event</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">A Waste specific event instance.</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

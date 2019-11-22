@@ -1,0 +1,48 @@
+﻿{
+  "BS7666Address": {
+    "type": "object",
+    "description": "The Land Registry BS7666 type.",
+    "required": [
+      "type"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models"
+      },
+      "@type": {
+        "type": "string",
+        "default": "BS7666Address"
+      },
+      "paon": {
+        "type": "http://landregistry.data.gov.uk/def/common/paon",
+        "description": "Primary Addressable Object Name (PAON), typically building name or street number (see BS7666)."
+      },
+      "saon": {
+        "type": "http://landregistry.data.gov.uk/def/common/saon",
+        "description": "Secondary Addressable Object Name (SAON), e.g. flat number (see BS7666)."
+      },
+      "street": {
+        "type": "http://landregistry.data.gov.uk/def/common/street",
+        "description": "Name of any thoroughfare in England and Wales which is the first or only street name in an address."
+      },
+      "locality": {
+        "type": "http://landregistry.data.gov.uk/def/common/locality",
+        "description": "Name of a place which is either a hamlet / village in a rural area or a subdivision of a town / city in an urban area."
+      },
+      "town": {
+        "type": "http://landregistry.data.gov.uk/def/common/town",
+        "description": "Name of an urban area."
+      },
+      "county": {
+        "type": "http://landregistry.data.gov.uk/def/common/county",
+        "description": "Name of a geographic area which comprises either a current of former county in England of Wales or a Unitary Authority."
+      },
+      "postcode": {
+        "type": "http://landregistry.data.gov.uk/def/common/postcode",
+        "description": "Postcode"
+      }
+    }
+  }
+}

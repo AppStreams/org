@@ -1,0 +1,67 @@
+﻿<div class="row" id="parameters-location">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Location Parameters</h4>
+                <p>
+                    The location context can be specified in a number of ways depending on how specific you want to be
+                    or in a format used by a specific country.
+                </p>
+                <p>
+                    <b>One or more of the parameters defined in the table below should be used in place of the {location} parameter.</b>
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services?{location}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>country</tt></td>
+                            <td>string</td>
+                            <td>false</td>
+                            <td>gb</td>
+                            <td>The ISO 3166 two letter country code to limit your query to.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>postcode</tt></td>
+                            <td>string</td>
+                            <td>false</td>
+                            <td></td>
+                            <td>The postcode to get the bin collection schedule for.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/Next?country=gb&postcode=g13144</pre>
+                </div>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/Last?uprn=938472384</pre>
+                </div>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/services?city=glasgow</pre>
+                </div>
+                <p>JSON:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>{
+    "country": "gb",
+    "postcode": "G1 7AA"
+}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

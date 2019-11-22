@@ -1,35 +1,66 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ViewData["Title"] = "AppStreams";}
 
 <main role="main" class="inner cover">
+    <!--
     <br />
     <div><img src="/images/citybg_640.png" style="width:250px;height:auto;float:right" /></div>
-    <h1>AppStreams</h1>    
+    <h1><img src="/images/logo.png" style="width:40px;height:auto;" /> AppStreams</h1>
     <h3>Services and Schema for Cities</h3>    
     <div style="float:none"></div>
-    <p class="lead">
-        AppStreams provide a definition of common Services and Models that are used in Cities across the world.
-    </p>
-    <p>
-        The goal is to collaborarively create sets of reusable definitions that will improve integration, interoperability and allow
-        people developing services for Citizens and Business to be able to focus on the problem rather than the underlying platform details.
-    </p>
-    <h4>Services and Models</h4>
-    <div>
-        <p>
-            We have an increasing collection of common City Services that, where possible, use and integrate existing work around the world.
-        </p>
-        <p>
-            <a href="/services" class="btn btn-lg btn-primary">View Services</a>
-        </p>
+        -->
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <!--
+              <img src="/images/citybg_640.png" style="width:250px;height:auto;float:right" />
+              <div style="float:none"></div>
+              <h1><img src="/images/logo.png" style="width:40px;height:auto;" /> AppStreams</h1>-->
+              <h3>Services and Data for Cities</h3>              
+          </div>
+      </div>
+      <div class="row">
+        <div  class="col-8">
+            <p class="lead">
+                AppStreams provide a definition of common Application Services and Data Models that are used in Cities across the world.
+            </p>
+            <p>
+                The goal is to collaborarively create sets of reusable definitions that will improve integration, interoperability and allow
+                people developing services for Citizens and Business to be able to focus on the problem rather than the underlying platform details.
+            </p>
+            <h4>Services and Models</h4>
+            <div>
+                <p>
+                    We have an increasing collection of common City Services that, where possible, use and integrate existing work around the world.
+                </p>
+                <p>
+                    <a href="/services" class="btn btn-lg btn-primary">View Services</a>
+                </p>
         
-        <p>
-            The services above use a variation of data models to exchange information and define taxonomies of data that can be reused across Cities
-            to improve interoperability and reuse of services.
-        </p>
-        <p>
-            <a href="/models" class="btn btn-lg btn-info">View Models</a>
-        </p>
+                <p>
+                    The services above use a variation of data models to exchange information and define taxonomies of data that can be reused across Cities
+                    to improve interoperability and reuse of services.
+                </p>
+                <p>
+                    <a href="/models" class="btn btn-lg btn-info">View Models</a>
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="alert alert-warning" role="alert" style="text-align:left">
+              <p>
+                  The term <b>AppStreams</b> comes from a combination of the ideas of Applications or APIs for Cities
+                  and the Streams of Data those applications serve.
+              </p>
+                <p>
+                    We are early in the journey but hope to create a set of easy to use Service and Data definitions for
+                    Cities around the World.
+                </p>
+                <p>
+                    If you have services or data related to Cities and want to suggest ideas or participate in the project, please
+                    <a href="/contact">get in touch</a>.
+                </p>
+            </div>
+        </div>
+      </div>
     </div>
 </main>

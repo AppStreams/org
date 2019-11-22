@@ -1,0 +1,12 @@
+﻿[
+  {
+    "@context": [
+      "http://appstreams.org/models",
+      { "schema": "http://schema.org/" }
+    ],
+    "@type": "EventType",
+    "@id": "http://appstreams.org/taxonomies/EventTypes/Waste/planned_collection",
+    "id": "waste_planned_collection",
+    "name": "Planned Collection"
+  }
+]

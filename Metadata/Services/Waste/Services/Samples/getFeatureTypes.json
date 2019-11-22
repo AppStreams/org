@@ -1,0 +1,50 @@
+﻿/* This returns expanded Feature Type data. */
+[
+  {
+    "@context": [
+      "http://appstreams.org/models/Waste",
+      { "schema": "http://schema.org/" }
+    ],
+    "@type": "FeatureType",
+    "@id": "http://appstreams.org/models/Waste/Service/FeatureTypes/00cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "name": "Wheelie bin",
+    "description": "Wheelie bin",
+    "reusable": true,
+    "color": "blue",
+    "shape": "wheelie_bin",
+    "sizes": [ 180, 240 ],
+    "materials": [
+      {
+        "@type": "Material",
+        "@id": "http://appstreams.org/models/Waste/Material/paper",
+        "name": "Paper"
+      },
+      {
+        "@type": "Material",
+        "@id": "http://appstreams.org/models/Waste/Material/plastic",
+        "name": "Plastic"
+      }
+    ]
+  },
+  {
+    "@context": [
+      "http://appstreams.org/models/Waste",
+      { "schema": "http://schema.org/" }
+    ],
+    "@type": "FeatureType",
+    "@id": "http://appstreams.org/models/Waste/Service/FeatureTypes/77afeeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "name": "Wheelie bin",
+    "description": "Wheelie bin",
+    "reusable": true,
+    "color": "brown",
+    "shape": "wheelie_bin",
+    "sizes": [ 180, 240 ],
+    "materials": [
+      {
+        "@type": "Material",
+        "@id": "http://appstreams.org/models/Waste/Material/householdOrganics",
+        "name": "Household Organics"
+      }
+    ]
+  }
+]

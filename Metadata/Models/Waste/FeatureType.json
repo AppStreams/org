@@ -1,0 +1,53 @@
+﻿{
+  "FeatureType": {
+    "allOf": [
+      {
+        "$ref": "ContainerType.json#/ContainerType"
+      },
+      {
+        "type": "object",
+        "required": [
+          "@id",
+          "id",
+          "name"
+        ],
+        "properties": {
+          "@context": {
+            "type": "string",
+            "format": "uri",
+            "default": "http://appstreams.org/models/Waste"
+          },
+          "@type": {
+            "type": "string",
+            "default": "FeatureType"
+          },
+          "@id": {
+            "description": "A dereferencable Id for this type instance",
+            "type": "string",
+            "format": "uri",
+            "example": "http://appstreams.org/models/Waste/FeatureType/00cfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A GUID identifier for this type of container.",
+            "example": "00cfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+          },
+          "name": {
+            "type": "string",
+            "description": "A name for this type of bin."
+          },
+          "description": {
+            "type": "string",
+            "description": "A text description of this bin."
+          },
+          "manufacturer": {
+            "type": "string",
+            "description": "The maker of this bin."
+          }
+        }
+      }
+    
+    ]
+  }
+}

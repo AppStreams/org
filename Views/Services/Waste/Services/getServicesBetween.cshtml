@@ -1,0 +1,84 @@
+﻿<div class="row" id="service-getServicesBetween">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Get the list of bin services scheduled for the location between the start and end date</h4>
+                <p>
+                    Returns the unique list of collection combinations scheduled for this location between the dates with an optional filter on the specified feature type.
+                    This also returns a next_collections property which has a scheduled list of Tasks for
+                    that time period.
+                </p>
+                <p>
+                    <small class="text-muted">
+                        <span data-feather="info" style="width:15px;height:auto;"></span>
+                        Note that you must provide some valid context for location, such as the country and postcode
+                        or you will get an error.
+                    </small>
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services/Waste/Services/Between?{start_date}&{end_date}&{featureTypeId}&{location}&{paging}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>start_date</tt></td>
+                            <td>string</td>
+                            <td>true</td>
+                            <td></td>
+                            <td>The ISO 8601 date at which to start at - includes that day.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>end_date</tt></td>
+                            <td>string</td>
+                            <td>true</td>
+                            <td></td>
+                            <td>The date at which to end at - stops on the specified date.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>featureTypeId</tt></td>
+                            <td>UUID</td>
+                            <td>false</td>
+                            <td></td>
+                            <td>The featureTypeId to filter on.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>location</tt></td>
+                            <td><a href="/services/parameters">Location</a></td>
+                            <td>true</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters">Common Location Parameter</a></td>
+                        </tr>
+                        <tr>
+                            <td><tt>paging</tt></td>
+                            <td><a href="/services/parameters">Paging</a></td>
+                            <td>false</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters">Common Paging Parameter</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/Services/Between?country=gb&postcode=g131sj&start_date=2019-11-01&amp;end_date=2019-11-30</pre>
+                </div>
+
+                <p class="text-success"><strong>Example Responses</strong></p>
+                <p>HTTP code: 200</p>
+                <div class="jumbotron" style="padding:0;"><pre>@org.appstreams.Utility.ReadFromFile("waste/services/samples/getServicesBetween.json")</pre></div>
+            </div>
+        </div>
+    </div>
+</div>

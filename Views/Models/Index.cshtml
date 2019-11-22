@@ -1,5 +1,48 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<h1>Models</h1>
-<a href="/models/Waste">Waste</a>
+﻿@{ViewData["Title"] = "Models";}
+<h3>@ViewData["Title"]</h3>
+
+<p class="lead">
+    The models define the data structures that can be sent or are returned when
+    interacting with the Services.
+</p>
+<div class="row">
+    <div class="col-12">
+        <ul style="padding-left:0;list-style-type: none;">
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Waste">Waste</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Data structures related to bin collections and waste management.</small>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Common Models</h3>
+        <p>These are models that are used across nay of the above models.</p>
+        <ul style="padding-left:0;list-style-type: none;">
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Place">Place</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Location details, typically containing one of the address formats below.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Address">Address</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Common address properties.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/BS7666Address">BS7666 Address</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">The BS7666 UK Land Registry Standard address.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/models/Event">Event</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">General event data - will contain event data specific to the context.</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<h1>Waste Services</h1>
-<a href="/services/Waste/Collection">Waste Collection</a>
+﻿@{ViewData["Title"] = "Waste Services";}
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    Waste Services include domestic and commercial waste services throughout the City, whether this is bin collection,
+    bin replacement, refuse recyling and more.
+</p>
+
+<div class="row">
+    <div class="col-8">
+        <ul style="padding-left:0;list-style-type: none;">
+            <li>
+                <span data-feather="settings" style="width:14px;height:auto;"></span> <a href="/services/Waste/Services">Waste Collection</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Bin collection services.</small>
+                </div>
+            </li>
+            <li>
+                <span data-feather="settings" style="width:14px;height:auto;"></span> <a href="/services/Waste/lwsp">Local Waste Service Standards</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">The Local Waste Service Standards.</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <div class="alert alert-warning" role="alert" style="text-align:left">
+            Services generally consist of the following elements:
+            <br />
+            <ul style="padding-left:20px">
+                <li>Service Definition</li>
+                <li>Models Used</li>
+                <li>Taxonomies Used</li>
+                <li>Request Format</li>
+                <li>Response Format</li>        
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://appstreams.org/v1"
+    },
+    {
+      "url": "http://appstreams.org/v1"
+    }
+  ],
+  "info": {
+    "description": "This provides Bin Collection service definition to provide bin collection schedule and next bin collection data.",
+    "version": "1.0.0",
+    "title": "Bin Collection",
+    "termsOfService": "http://appstreams.org/privacy/",
+    "contact": {
+      "email": "info@appstreams.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "bin",
+      "description": "Bin Collection data",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Waste/Collection"
+      }
+    }
+  ],
+  "paths": {
+    "/services/Waste/Collection/Schedule/{country}/{postcode}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get the bin collection schedule",
+        "description": "Returns a single bin collection schedule",
+        "operationId": "getSchedule",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "path",
+            "description": "The full postcode to get the bin collection schedule for",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "schedule.json#/Pet"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about AppStreams",
+    "url": "http://appstreams.org"
+  },
+  "components": {
+    "requestBodies": null,
+    "securitySchemes": null
+  }
+}

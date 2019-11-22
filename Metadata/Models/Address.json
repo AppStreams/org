@@ -1,0 +1,11 @@
+﻿{
+  "Address": {
+    "oneOf": [
+      {
+        "$ref": "BS7666Address.json#/BS7666Address"
+      },
+      {
+        "$ref": "http://schema.org/address"
+      }
+  }
+}

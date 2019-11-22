@@ -1,0 +1,36 @@
+﻿[
+  {
+    "@context": "http://appstreams.org/models",
+    "@type": "Event",
+    "@id": "http://appstreams.org/services/events/11cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "id": "11cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "filter": {
+      "type": "http://appstreams.org/models/Waste/planned_collection",
+      "data": {
+        "@context": "http://appstreams.org/models/Waste",
+        "@type": "Event",
+        "start_date": "2019-03-09",
+        "location": {
+          "@type": "schema:location",
+          "schema:address": {
+            "@type": "PostalAddress",
+            "addressCountry": "gb",
+            "addressLocality": "Glasgow",
+            "postalCode": "g131sj"
+          },
+          "geo": {
+            "latitude": "40.75",
+            "@type": "GeoCoordinates",
+            "longitude": "73.98"
+          }
+        },
+        "image": "http://example.com/images/123.png",
+        "feature_type": {
+          "@context": "http://appstreams.org/models/Waste",
+          "@type": "FeatureType",
+          "@id": "http://appstreams.org/models/Waste/Service/FeatureTypes/77afeeb8-aefd-4f2b-8cb0-b3186870ad14"
+        }
+      }
+    }
+  }
+]

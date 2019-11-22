@@ -1,0 +1,121 @@
+﻿// A fully featured example using all available data.
+{
+  "@type": "WasteService",
+  "@id": "http://authority.gov.uk/services/Waste/Service/1",
+  "id": 1,
+  "name": "Recycling service",
+  "description": "Please put your recycling box on the street.",
+  "esd_url": "http://id.esd.org.uk/service/1130",
+  "frequency": "alternate weekly",
+  "schedule": {
+    "@type": "Schedule",
+    "startDate": "2019-01-01",
+    "endDate": "2019-12-31",
+    "repeatFrequency": "P2W",
+    "byDay": "http://schema.org/Tuesday"
+  },
+  "feature_types": [
+    {
+      "@id": "http://authority.gov.uk/models/Waste/Service/FeatureTypes/1",
+      "name": "Wheelie bin",
+      "description": "Wheelie bin",
+      "reusable": true,
+      "color": "black",
+      "lid_color": "green",
+      "shape": "wheelie_bin",
+
+      // A type of bin can come in different sizes
+      "sizes": [ 180, 240 ],
+
+      "materials": [
+        {
+          "@id": "http://appstreams.org/models/Waste/Material/paper",
+          "name": "Paper",
+          "color": "White"
+        }
+      ]
+    },
+    {
+      "@id": "http://authority.gov.uk/models/Waste/Service/FeatureTypes/2",
+      "name": "Caddy bin",
+      "description": "Caddy bin",
+      "reusable": true,
+      "color": "brown",
+      "shape": "caddy",
+      "sizes": [ 180, 240 ],
+      "materials": [
+        {
+          "@id": "http://appstreams.org/models/Waste/Material/householdOrganics-foodWaste",
+          "name": "Food waste"
+        }
+      ]
+    }
+  ],
+  "last_collections": [
+    {
+      // The Service Id Url plus an identifier for this collection instance of it
+      "@id": "http://authority.gov.uk/services/Waste/Service/1/34555665",
+      "@type": "EmptyBinTask",
+      "start_date": "2019-03-01",
+      "features": [
+        {
+          // A specific bin
+          "id": "54456546",
+
+          // Reference a feature type from above
+          "type": "http://authority.gov.uk/models/Waste/Service/FeatureTypes/2",
+
+          "status": "in_service",
+
+          // a size instance feature of this feature type
+          "size": 180
+        }
+      ]
+    }
+  ],
+  "next_collections": [
+    {
+      // The Service Id Url plus an identifier for this collection instance of it
+      "@id": "http://authority.gov.uk/services/Waste/Service/1/34555665",
+      "@type": "EmptyBinTask",
+      "start_date": "2019-03-09",
+      "features": [
+        {
+          // A specific bin
+          "id": "2140541",
+
+          // Reference a feature type from above
+          "type": "http://authority.gov.uk/models/Waste/Service/FeatureTypes/1",
+
+          "status": "in_service",
+
+          // a size instance feature of this feature type
+          "size": 240
+        }
+      ]
+    }
+  ],
+  "available_channel": {
+    "@type": "ServiceChannel",
+    "name": "Household waste and street maintenance",
+    "service_phone": {
+      "@type": "ContactPoint",
+      "telephone": "0123456789",
+      "email": "waste@authority.gov.uk"
+    },
+    "service_url": "http://www.example.gov.uk/waste"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Example Council",
+    "url": "http://www.authority.gov.uk"
+  },
+  "service_area": {
+    "@type": "AdministrativeArea",
+    "name": "Anytown"
+  },
+  "service_operator": {
+    "@type": "Organization",
+    "name": "Example Waste Operator Co"
+  }
+}

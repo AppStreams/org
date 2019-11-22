@@ -1,0 +1,47 @@
+﻿{
+  "Filter": {
+    "type": "object",
+    "required": [
+      "id",
+      "type"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models"
+      },
+      "@type": {
+        "type": "string",
+        "default": "Filter"
+      },
+      "id": {
+        "description": "A globally unique Id for this filter.",
+        "type": "string",
+        "example": "55afeeb8-aefd-4f2b-8cb0-b3186870ad14"
+      },
+      "name": {
+        "type": "string",
+        "description": "A display name for this filter.",
+        "example": "Planned Collection"
+      },
+      "type": {
+        "type": "array",
+        "description": "A categorisation of the events from <a href=\"/taxonomies/EventTypes\">Event Type Taxonomy</a>.",
+        "items": {
+          "type": "string"
+        },
+        "example": "[http://appstreams.org/taxonomies/EventTypes/Waste/planned_collection]"
+      },
+      "data": {
+        "type": "object",
+        "description": "Event specific data.",
+        "oneOf": [
+          {
+            "$ref": "Waste/Event.json#/Event"
+          }
+        ]
+      }
+    }
+  }
+}

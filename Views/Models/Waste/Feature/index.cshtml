@@ -1,0 +1,93 @@
+﻿@{ViewData["Title"] = "Waste Models - Feature";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    Represents a Waste Feature. Defined <a href="https://communitiesuk.github.io/waste-service-standards/models/feature.html">here</a>.
+</p>
+
+<p>
+    A Feature is an instance of a FeatureType - that is, it is a specific bin with its own identifier. This may be used to state whether someones bin
+    has been collected and so on.
+</p>
+
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            id
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            Unique identifer.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            type
+                        </td>
+                        <td>
+                            <a href="/models/Waste/FeatureType">FeatureType</a>
+                        </td>
+                        <td>
+                            The type of feature.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            barcode
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Integer">integer</a>
+                        </td>
+                        <td>
+                            A barcode number.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            RFID
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Integer">integer</a>
+                        </td>
+                        <td>
+                            A RFID tag number.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            status
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            The status of the feature.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

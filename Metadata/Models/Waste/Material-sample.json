@@ -1,0 +1,8 @@
+﻿{
+  "@context": "http://appstreams.org/models/Waste",
+  "@type": "Material",
+  "@id": "http://appstreams.org/models/Waste/Material/paper",
+  "name": "Paper",
+  "color": "http://appstreams.org/data/Color/red",
+  "image": "http://uri.com/image.png"
+}

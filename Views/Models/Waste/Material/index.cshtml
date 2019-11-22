@@ -1,455 +1,53 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<h1>Waste - Materials</h1>
+﻿@{ViewData["Title"] = "Waste Models - Materials";}
+<h3>@ViewData["Title"]</h3>
 <p>
-    Defines the types of material waste. Defined <a href="https://communitiesuk.github.io/waste-service-standards/models/material.html">here</a>.
+    Defines the types of material waste. Defined in the <a href="/taxonomies/Waste/Materials">Materials Taxonomy</a>.
 </p>
-
-<style>
-    #definition table thead tr {
-        background-color:lightblue;
-    }
-</style>
-
-<p id="definition">
-    <h3>http://appstreams.org/models/Waste/Material</h3>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Property</th>
-                <th>Expected Type</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <th colspan="3">
-                    Properties from ...
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    @@id
-                </td>
-                <td>
-                    <a href="http://schema.org/URL">URL</a>
-                </td>
-                <td>
-                    A unique identifier for this type of material. They are defined <a href="#taxonomy">below.</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    name
-                </td>
-                <td>
-                    <a href="https://schema.org/Text">Text</a>
-                </td>
-                <td>
-                    The name of the material.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    color
-                </td>
-                <td>
-                    <a href="https://schema.org/color">color</a>
-                </td>
-                <td>
-                    The matching <a href="https://partners.wrap.org.uk/material-stream-icons/">WRAP material stream</a> colour.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    image
-                </td>
-                <td>
-                    <a href="https://schema.org/image">Image URL</a>
-                </td>
-                <td>
-                    The Url to an image representing the material.
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</p>
-
-<div id="taxonomy">
-    Uses the types defined in the <a href="https://partners.wrap.org.uk/material-stream-icons">WRAP material stream</a>.
-    These are defined as part of AppStreams but use the values from the WRAP types.
-
-    E.g. http://appstreams.org/models/Waste/Material/paper, http://appstreams.org/models/Waste/Material/glass
-    (maybe we define this locally as they have no identifier, for each of their types)
-
-    <h2>Taxonomy</h2>
-
-    <h3>Textiles</h3>
-    <div id="textiles">
-        <h5>Textiles</h5>
-        
-    </div>
-    <div id="textiles-clothes">
-        <h5>Clothes</h5>
-        
-    </div>
-    <div id="textiles-shoes">
-        <h5>Shoes</h5>
-        
-    </div>
-    <div id="textiles-mixedTextilesAndClothes">
-        <h5>Mixed textiles &amp; clothes</h5>
-        
-    </div>
-
-    <h3>Plastics</h3>
-    <div id="plastic">
-        <h5>Plastics</h5>
-        
-    </div>
-    <div id="plastic-bottles">
-        <h5>Plastic bottles</h5>
-        
-    </div>
-    <div id="plastic-bags">
-        <h5>Plastic bags</h5>
-        
-    </div>
-    <div id="plastic-householdPlasticsWithoutFilm">
-        <h5>Household plastics (without film)</h5>
-        
-    </div>
-    <div id="plastic-hardPlastics">
-        <h5>Hard plastics</h5>
-        
-    </div>
-    <div id="plastic-polystyrene">
-        <h5>Polystyrene</h5>
-        
-    </div>
-
-    <h3>Paper</h3>
-    <div id="paper">
-        <h5>Paper</h5>
-        
-    </div>
-    <div id="paper-newspapersAndMagazines">
-        <h5>Newspapers &amp; magazines</h5>
-        
-    </div>
-    <div id="paper-cardboard">
-        <h5>Cardboard</h5>
-        
-    </div>
-    <div id="paper-telephoneDirectories">
-        <h5>Telephone directories</h5>
-        
-    </div>
-    <div id="paper-mixedPaper">
-        <h5>Mixed paper</h5>
-        
-    </div>
-    <div id="paper-mixedPaperAndCard">
-        <h5>Mixed paper &amp; card</h5>
-        
-    </div>
-    <div id="paper-books">
-        <h5>Books</h5>
-        
-    </div>
-    <div id="paper-corrugatedCardboard">
-        <h5>Corrugated cardboard</h5>
-        
-    </div>
-
-    <h3>Glass</h3>
-    <div id="glass">
-        <h5>Glass</h5>
-        
-    </div>
-    <div id="glass-mixedGlass">
-        <h5>Mixed glass</h5>
-        
-    </div>
-    <div id="glass-clearGlassBottlesAndJars">
-        <h5>Clear glass bottles and jars</h5>
-        
-    </div>
-    <div id="glass-brownGlassBottlesAndJars">
-        <h5>Brown glass bottles and jars</h5>
-        
-    </div>
-    <div id="glass-greenGlassBottlesAndJars">
-        <h5>Green glass bottles and jars</h5>
-        
-    </div>
-    <div id="glass-blueGlassBottlesAndJars">
-        <h5>Blue glass bottles and jars</h5>
-        
-    </div>
-    <div id="glass-flatGlass">
-        <h5>Flat glass</h5>
-        
-    </div>
-
-
-    <h3>Household organics</h3>
-    <div id="householdOrganics">
-        <h5>Household organics</h5>
-        
-    </div>
-    <div id="householdOrganics-gardenWaste">
-        <h5>Garden waste</h5>
-        
-    </div>
-    <div id="householdOrganics-foodWaste">
-        <h5>Food waste</h5>
-        
-    </div>
-
-
-    <h3>Metals</h3>
-    <div id="metals">
-        <h5>Metals</h5>
-        
-    </div>
-    <div id="metals-foodAndDrinkCans">
-        <h5>Food &amp; drink cans</h5>
-        
-    </div>
-    <div id="metals-aluminiumCans">
-        <h5>Aluminium cans</h5>
-        
-    </div>
-    <div id="metals-steelCans">
-        <h5>Steel cans</h5>
-        
-    </div>
-    <div id="metals-aerosols">
-        <h5>Aerosols</h5>
-        
-    </div>
-    <div id="metals-foil">
-        <h5>Foil</h5>
-        
-    </div>
-    <div id="metals-foilPieTin">
-        <h5>Foil (with pie tin)</h5>
-        
-    </div>
-    <div id="metals-foilTrays">
-        <h5>Foil trays</h5>
-        
-    </div>
-    <div id="metals-scrapMetal">
-        <h5>Scrap metal</h5>
-        
-    </div>
-    <div id="metals-largeTins">
-        <h5>Large tins</h5>
-        
-    </div>
-    <div id="metals-mixedMetals">
-        <h5>Mixed metals</h5>
-        
-    </div>
-    <div id="metals-mixedMetalsWithFoil">
-        <h5>Mixed metals (with foil)</h5>
-        
-    </div>
-    <div id="metals-mixedMetalsWithFoilWithoutAerosol">
-        <h5>Mixed metals (with foil but without aerosol)</h5>
-        
-    </div>
-
-
-    <h3>Automotive waste</h3>
-    <div id="automotiveWaste">
-        <h5>Automotive waste</h5>
-        
-    </div>
-    <div id="automotiveWaste-usedEngineOil">
-        <h5>Used engine oil</h5>
-        
-    </div>
-    <div id="automotiveWaste-carBatteries">
-        <h5>Car batteries</h5>
-        
-    </div>
-    <div id="automotiveWaste-tyres">
-        <h5>Tyres</h5>
-        
-    </div>
-
-    <h3>Building materials</h3>
-    <div id="buildingMaterials">
-        <h5>Building materials</h5>
-        
-    </div>
-    <div id="buildingMaterials-soil">
-        <h5>Soil</h5>
-        
-    </div>
-    <div id="buildingMaterials-hardcoreAndRrubble">
-        <h5>Hardcore &amp; rubble</h5>
-        
-    </div>
-    <div id="buildingMaterials-woodAndTimber">
-        <h5>Wood &amp; timber</h5>
-        
-    </div>
-    <div id="buildingMaterials-plasterboard">
-        <h5>Plasterboard</h5>
-        
-    </div>
-    <div id="buildingMaterials-upvcFrames">
-        <h5>UPVC frames</h5>
-        
-    </div>
-
-    <h3>Other recyclables</h3>
-    <div id="otherRecyclables">
-        <h5>Other recyclables</h5>
-        
-    </div>
-    <div id="otherRecyclables-paint">
-        <h5>Paint</h5>
-        
-    </div>
-    <div id="otherRecyclables-spectacles">
-        <h5>Spectacles</h5>
-        
-    </div>
-    <div id="otherRecyclables-cartons">
-        <h5>Cartons</h5>
-        
-    </div>
-    <div id="otherRecyclables-furniture">
-        <h5>Furniture</h5>
-        
-    </div>
-    <div id="otherRecyclables-tapesAndDiscs">
-        <h5>Tapes &amp; discs</h5>
-        
-    </div>
-    <div id="otherRecyclables-discs">
-        <h5>Discs</h5>
-        
-    </div>
-    <div id="otherRecyclables-tapes">
-        <h5>Tapes</h5>
-        
-    </div>
-    <div id="otherRecyclables-handTools">
-        <h5>Hand tools</h5>
-        
-    </div>
-    <div id="otherRecyclables-cookingOil">
-        <h5>Cooking oil</h5>
-        
-    </div>
-    <div id="otherRecyclables-carpet">
-        <h5>Carpet</h5>
-        
-    </div>
-    <div id="otherRecyclables-mattresses">
-        <h5>Mattresses</h5>
-    </div>
-    <div id="otherRecyclables-bicycles">
-        <h5>Bicycles</h5>        
-    </div>
-
-
-    <h3>Waste Electronic and Electrical Equipment (WEEE)</h3>
-    <div id="weee">
-        <h5>Waste Electronic and Electrical Equipment (WEEE)</h5>        
-    </div>
-    <div id="weee-Electrical">
-        <h5>Electrical</h5>
-    </div>
-    <div id="weee-fridgesAndFreezers">
-        <h5>Fridges &amp; freezers</h5>
-    </div>
-    <div id="weee-Batteries">
-        <h5>Batteries</h5>
-    </div>
-    <div id="weee-telecomsAndComputersPhoneAndMouse">
-        <h5>Telecoms &amp; computers – phone &amp; mouse</h5>
-    </div>
-    <div id="weee-telecomsAndComputersFaxAndCpu">
-        <h5>Telecoms &amp; computers – fax &amp; cpu</h5>
-    </div>
-    <div id="weee-smallAppliancesIrons">
-        <h5>Small appliances – irons</h5>
-    </div>
-    <div id="weee-smallAppliancesRadios">
-        <h5>Small appliances – radios</h5>
-    </div>
-    <div id="weee-smallAppliancesHairDryers">
-        <h5>Small appliances – hair dryers</h5>
-    </div>
-    <div id="weee-smallAppliancesMixed">
-        <h5>Small appliances – mixed</h5>
-    </div>
-    <div id="weee-largeAppliancesMixed">
-        <h5>Large appliances – mixed</h5>
-    </div>
-    <div id="weee-largeAppliancesWashingMachine">
-        <h5>Large appliances – washing machine</h5>
-    </div>
-    <div id="weee-fluorescentTubes">
-        <h5>Fluorescent tubes</h5>
-    </div>
-    <div id="weee-lowEnergyBulbs">
-        <h5>Low energy bulbs</h5>
-    </div>
-    <div id="weee-mixedLightBulbs">
-        <h5>Mixed light bulbs</h5>
-    </div>
-    <div id="weee-tvAndMonitors">
-        <h5>TV &amp; monitors</h5>
-    </div>
-    <div id="weee-mobilePhones">
-        <h5>Mobile phones</h5>
-    </div>
-    <div id="weee-printerCartridges">
-        <h5>Printer cartridges</h5>
-    </div>
-
-
-    <h3>Household waste</h3>
-    <div id="householdWaste">
-        <h5>Household waste</h5>
-    </div>
-
-    <h3>Household hazardous waste</h3>
-    <div id="householdHazardousWaste">
-        <h5>Household hazardous waste</h5>
-    </div>
-    <div id="householdWaste-householdHazardousWaste">
-        <h5>Household hazardous waste</h5>
-    </div>
-    <div id="householdWaste-householdMaterials">
-        <h5>Household materials</h5>
-    </div>
-    <div id="householdWaste-gasBottles">
-        <h5>Gas bottles</h5>
-    </div>
-    <div id="householdWaste-gasBottlesWithHealthAndSafetyAdditionalInformation">
-        <h5>Gas bottles with health and safety additional information</h5>
-    </div>
-    <div id="householdWaste-asbestos">
-        <h5>Asbestos</h5>
-    </div>
-    <div id="householdWaste-householdAndGardenChemicals">
-        <h5>Household & garden chemicals</h5>
-    </div>
-
-
-    <h3>Mixed recyclables</h3>
-    <div id="mixedRecyclables">
-        <h5>Mixed recyclables</h5>
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models/Waste</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>Material</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@id</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>A unique identifier for this type of material. They are defined <a href="/taxonomies/Waste/Materials">here.</a></td>
+                    </tr>
+                    <tr>
+                        <td><tt>name</tt></td>
+                        <td><a href="https://schema.org/Text">Text</a></td>
+                        <td>The name of the material.</td>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td><a href="https://schema.org/color">Color</a></td>
+                        <td>The matching <a href="https://partners.wrap.org.uk/material-stream-icons/">WRAP material stream</a> colour.</td>
+                    </tr>
+                    <tr>
+                        <td>image</td>
+                        <td><a href="https://schema.org/image">Image URL</a></td>
+                        <td>The Url to an image representing the material.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -462,11 +60,3 @@
 <pre>
 @Html.Raw(ViewBag.JsonSample)
 </pre>
-
-
-<p>
-    <a href="/models/Waste">Waste Models</a>
-</p>
-<p>
-    <a href="/models">Models</a>
-</p>

@@ -1,0 +1,39 @@
+﻿@{ViewData["Title"] = "Event Types Taxonomy";}
+<h3>@ViewData["Title"]</h3>
+
+<p class="lead">
+    The set of Event Types that can be used by the <a href="/services/events">Event Services</a>. 
+</p>
+<p>
+    The events themselves are specific to the service they are used in as
+    defined in the <b>domain</b> property below (e.g. Waste).
+</p>
+<div class="row">
+    <div class="col-12">
+        <div>
+        <p>
+            The base namespace is <a href="/taxonomies/EventTypes">http://appstreams.org/taxonomies/EventTypes</a> combined with the domain and name given below.
+            <br/>
+            <small>e.g. http://appstreams.org/taxonomies/EventTypes/Waste/planned_collection</small>
+        </p>
+            <table class="table">
+              <thead>
+                <tr>
+                <th>domain</th>
+                <th>name</th>
+                <th>sub-name</th>                
+                <th>description</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Waste</td>
+                    <td>planned_collection</td>
+                    <td></td>                    
+                    <td>A collection that has yet to be carried out.</td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>

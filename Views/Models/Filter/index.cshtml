@@ -1,0 +1,66 @@
+﻿@{ViewData["Title"] = "Models - Filter";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    A Filter sets the context for an event or a subscription - that is when a subscription is created it will have a Filter that
+    for example defines a location; that same Filter will be set for events that are emitted.
+</p>
+<p>
+    This Filter is set as the <b>filter</b> property on an <a href="/models/Event">Event</a> or a <a href="/models/Subscription">Subscription</a>.
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="Filter">Filter</a></td>
+                        <td>A Filter type.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@id</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>A dereferencable Id for this filter</td>
+                    </tr>
+                    <tr>
+                        <td><tt>id</tt></td>
+                        <td>string</td>
+                        <td>A unique Id for this filter</td>
+                    </tr>
+                    <tr>
+                        <td><tt>type</tt></td>
+                        <td>Array of <a href="http://schema.org/URL">URL</a></td>
+                        <td>A categorisation of the filter events from the <a href="/taxonomies/EventTypes">Event Type Taxonomy</a>.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>data</tt></td>
+                        <td>object</td>
+                        <td>An Event sub-type instance with the data specific to the event type above.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

@@ -1,0 +1,163 @@
+﻿{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://appstreams.org/v1"
+    },
+    {
+      "url": "http://appstreams.org/v1"
+    }
+  ],
+  "info": {
+    "description": "This provides Bin Service definition to provide bin collection schedule and next bin collection data.",
+    "version": "1.0.0",
+    "title": "Bin Service",
+    "termsOfService": "http://appstreams.org/privacy/",
+    "contact": {
+      "email": "info@appstreams.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "bin",
+      "description": "Bin Service data",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Waste/Service"
+      }
+    }
+  ],
+  "paths": {
+    "/services?{uprn}&{full}&{start_date}&{end_date}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get a list of waste services",
+        "description": "Returns a list of services scheduled between the specified dates.",
+        "operationId": "getServices",
+        "parameters": [
+          {
+            "name": "uprn",
+            "in": "query",
+            "description": "Displays services related to the property with this UPRN. This also includes basic completed and upcoming collection information and automatically includes related tasks if the property has a parent UPRN.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "full",
+            "in": "query",
+            "description": "Return the full service information.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "description": "Filter related tasks that occur after this date.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "description": "Filter related tasks that start before this date.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../../Models/Waste/Service/Service.json#/Service"
+                  }
+                },
+                "example": {
+                  "jsonObject": {
+                    "summary": "A sample object",
+                    "externalValue": "http://example.com/examples/object-example.json"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/serviceId?{uprn}": {
+      "get": {
+        "tags": [
+          "bin"
+        ],
+        "summary": "Get a single service",
+        "description": "Returns a single service given the UPRN.",
+        "operationId": "getService",
+        "parameters": [
+          {
+            "name": "uprn",
+            "in": "query",
+            "description": "Limit results to those related to the property with this UPRN. This will include the last and next collection task information.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../Models/Waste/Service/Service.json#/Service"
+                },
+                "example": {
+                  "jsonObject": {
+                    "summary": "A sample object",
+                    "externalValue": "http://example.com/examples/object-example.json"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+    "externalDocs": {
+      "description": "Find out more about AppStreams",
+      "url": "http://appstreams.org"
+    },
+    "components": {
+      "requestBodies": null,
+      "securitySchemes": null
+    }
+  }

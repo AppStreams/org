@@ -1,0 +1,59 @@
+﻿<div class="row" id="parameters-paging">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Paging Parameters</h4>
+                <p>
+                    The paging context allows you to step through large responses to queries.
+                </p>
+                <p>
+                    <b>One or more of the parameters defined in the table below should be used in place of the {paging} parameter.</b>
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services?{paging}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>ps</tt></td>
+                            <td>integer</td>
+                            <td>false</td>
+                            <td>10</td>
+                            <td>The number of records to return (page size).</td>
+                        </tr>
+                        <tr>
+                            <td><tt>pn</tt></td>
+                            <td>integer</td>
+                            <td>false</td>
+                            <td>0</td>
+                            <td>The page number to return (starts at 0).</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/services?ps=50&pn=3</pre>
+                </div>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/services?ps=100</pre>
+                </div>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/services?pn=20</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

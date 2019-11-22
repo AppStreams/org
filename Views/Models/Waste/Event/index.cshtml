@@ -1,0 +1,69 @@
+﻿@{ViewData["Title"] = "Waste Models - Event";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    This waste event <b>must</b> be set as the <i>data</i> property of a general <a href="/models/Event">Event</a> type.
+    The properties below can be set as the content of that data property.
+</p>
+
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models/Waste</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>Event</td>
+                    </tr>
+                    <tr>
+                        <td>start_date</td>
+                        <td><a href="https://schema.org/startDate">startDate</a></td>
+                        <td>When the event takes/took place.</td>
+                    </tr>
+                    <tr>
+                        <td>location</td>
+                        <td><a href="http://schema.org/location">location</a></td>
+                        <td>Location of the event target.</td>
+                    </tr>
+                    <tr>
+                        <td>image</td>
+                        <td><a href="http://schema.org/image">image</a></td>
+                        <td>A URL to a related image.</td>
+                    </tr>
+                    <tr>
+                        <td>feature_type</td>
+                        <td><a href="/models/Waste/FeatureType">FeatureType</a></td>
+                        <td>The type of feature, if relevant.</td>
+                    </tr>
+                    <tr>
+                        <td>task</td>
+                        <td><a href="/models/Waste/Task">Task</a></td>
+                        <td>Task related to the event, if one has yet been defined.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

@@ -1,0 +1,65 @@
+﻿@{ViewData["Title"] = "Event Services";}
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    This provides events that are used across many types of services and the data of the event will vary according to the
+    context of the service you are working with.
+</p>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingEvents">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEvents" aria-expanded="false" aria-controls="collapseEvents">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Core Event Services
+            </button>
+            </h5>
+        </div>
+        <div id="collapseEvents" class="collapse" aria-labelledby="headingEvents" data-parent="#accordion">
+            <div class="card-body">
+                <p>
+                    Core event services that are used across many of the other services.
+                </p>
+                <ul>
+                    <li><a href="#services-getEvents">Gets a list of events</a></li>
+                    <li><a href="#services-getEvent">Gets a specific event</a></li>
+                    <li><a href="#services-getEventTypes">Gets the Event Types available</a></li>
+                    <li><a href="#services-getEventType">Gets a specific Event Type</a></li>
+                </ul>
+
+                @Html.Partial("events/getEvents")
+                @Html.Partial("events/getEvent")
+                @Html.Partial("events/getEventTypes")
+                @Html.Partial("events/getEventType")
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingEventManagement">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEventManagement" aria-expanded="false" aria-controls="collapseEvents">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Event Management
+            </button>
+            </h5>
+        </div>
+        <div id="collapseEventManagement" class="collapse" aria-labelledby="headingEventManagement" data-parent="#accordion">
+            <div class="card-body">
+                <p>
+                    These are optional event services aimed at providing a model for publishing, subscribing and being notified of events.
+                </p>
+                <ul>
+                    <li><a href="#services-subscribe">Subscribes a consumer to an event</a></li>
+                    <li><a href="#services-subscriptions">Gets a list of subscriptions for a user</a></li>
+                    <li><a href="#services-subscription">Gets a subscription for a user</a></li>
+                    <li><a href="#services-unsubscribe">Unsubscribes a consumer from an event</a></li>
+                </ul>
+                
+                @Html.Partial("events/subscribe")
+                @Html.Partial("events/subscriptions")
+                @Html.Partial("events/subscription")
+                @Html.Partial("events/unsubscribe")
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@{ViewData["Title"] = "Events";}
+<h3>@ViewData["Title"]</h3>
+
+<p class="lead">
+    There are definitions of Events that are emitted from the Services. There is a top level abstract definition of an Event but it needs to be associated with
+    a specific Service Event to have a context.
+</p>
+<p>
+    To receive Events, a consumer needs to create Subscriptions which define the context for Events they want to receive. When the condition for a Subscription is met
+    an Event will be raised for that condition.
+</p>
+<div class="row">
+    <div class="col-12">
+        <h5>Filter</h5>
+        <div>
+            A <a href="/models/Filter">Filter</a> is the set of conditions upon which a consumer wants to notified about an event. This may be location based or other.
+            It will be set as the <b>filter</b> property of the Event or Subscription.
+        </div>
+        <br />
+        <h5>Subscription</h5>
+        <div>
+            <a href="/models/Subscription">Subscriptions</a> are created by consumers to indicate the kinds of things they want to know about. A user can create many
+            subscriptions and control the types of events and contexts for which they want events using a <a href="/models/Filter">Filter</a>. How they are <i>told</i> about such events is down to the implementation.
+        </div>
+        <br />
+        <h5>Event</h5>
+        <div>
+            <a href="/models/Event">Events</a> are emitted from the system to indicate something has happened according to a context that is found in a <a href="/models/Filter">Filter</a>.
+            How they are <i>told</i> about such events is down to the implementation.
+        </div>
+        <br />
+
+        <h3>Event Types</h3>
+        <p>
+            The <a href="/models/Filter">Filter</a> property of an <a href="/models/Event">Event</a> should be set with the on of the following event definitions.
+        </p>
+        <ul style="padding-left:0;list-style-type: none;">
+            <li>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/events/Waste">Waste Events</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Bin collection and waste management events.</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!--
+<h3>Events</h3>
+<a href="/events/Waste">Waste</a>
+
+<p>
+    <hr />
+    Events are either inbound, outbound or bidirectional interactions with the service.
+    <br /><br />
+    Inbound may be an external service passing some data or setting some status (update of postcodes, change of schedules).
+    <br /><br />
+    Outbound may be a message to an external service or a notification (new missed bin, change of schedule).
+    <br /><br />
+    Bidirectional would be like a pubsub approach where either an external system may
+    subscribe to a platform event and react to that event sending a message back in, or
+    the platform itself may subscribe to an external system and an an event there will cause
+    the platform to send a message to that system. There is an additional complexity where an
+    event that is subscribed to causes an interaction with a third party. This paragraph could
+    be accomplished by a combination of the inbound and outbound methods above.
+    <br /><br />
+</p>
+-->

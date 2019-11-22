@@ -1,0 +1,64 @@
+﻿@{ViewData["Title"] = "Models - Subscription";}
+<h3>@ViewData["Title"]</h3>
+<p>
+   This represents an abstract subscription. It will contain a <a href="/models/Filter">Filter</a> that determines what the user is subscribing to. <a href="/models/Event">Events</a> emitted will have this <a href="/models/Filter">Filter</a> set within their body.
+</p>
+<p>
+    This requires one of the following <b>filter</b> properties to be set:
+    <ul>
+        <li><a href="/models/Waste/Event">Waste Event</a></li>
+    </ul>
+</p>
+
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>Subscription</td>
+                    </tr>
+                    <tr>
+                        <td><tt>id</tt></td>
+                        <td>string</td>
+                        <td>A unique Id for this subscription.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>userId</tt></td>
+                        <td>string</td>
+                        <td>A unique Id for this user.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>filter</tt></td>
+                        <td><a href="models/Filter">Filter</a></td>
+                        <td>A filter instance as context for this subscription.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

@@ -4,10 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AppStreams</title>
+    <link rel="stylesheet" href="~/css/theme-feeling-blue-3.x.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    
     <style>
-        h1 {
+        .btn {
+            border:0;   /*reset*/
+            box-shadow:0 0 0 0;
+            text-decoration:none;
+        }
+        .btn-link.focus, .btn-link:focus {
+            text-decoration:none;
+        }
+        .btn:hover {
+           box-shadow:0 0 0 0;
+        }
+
+        main h3 {
             color:#c94c4c;
         }
 
@@ -34,7 +48,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
-      <a class="navbar-brand" href="#">AppStreams</a>
+      <a class="navbar-brand" href="/"><img src="/images/logoinv.png" style="width:30px;height:auto;" />&nbsp; AppStreams</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,19 +59,49 @@
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
                 <a class="dropdown-item" href="/services">All Services</a>
                 <a class="dropdown-item" href="/services/Waste">Waste</a>
-                <!--<div class="dropdown-divider"></div>-->
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/services/events">Events</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Models</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Models</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="/models">All Models</a>
+                <a class="dropdown-item" href="/models">All Models</a>                
                 <a class="dropdown-item" href="/models/Waste">Waste</a>
-                <!--<div class="dropdown-divider"></div>-->
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/models/Place">Place</a>
+                <a class="dropdown-item" href="/models/Address">Address</a>                
+                <a class="dropdown-item" href="/models/Event">Event</a>
+                <a class="dropdown-item" href="/models/Subscription">Subscription</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Taxonomies</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="/taxonomies">All Taxonomies</a>
+                <a class="dropdown-item" href="/taxonomies/Waste">Waste</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/taxonomies/EventTypes">Event Types</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="/events">All Events</a>
+                <a class="dropdown-item" href="/events/Waste">Waste</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">API</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="/api">All APIs</a>
+                <a class="dropdown-item" href="/api/Waste">Waste</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/api/Events">Events</a>
             </div>
           </li>
           <li class="nav-item">
@@ -73,7 +117,9 @@
         </ul>
       </div>
     </nav>
-
+    <style>
+        .container { padding-top:10px;}
+    </style>
     <main role="main" class="container">
         <div>
             @RenderBody()
@@ -91,6 +137,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/feather.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
     @if (!String.IsNullOrWhiteSpace(ViewBag.Section))
@@ -102,5 +149,12 @@
         });
     </script>
     }
+
+    <script>
+        $(document).ready(function () {
+            // replace icons
+            feather.replace();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+﻿{
+  "@context": "http://appstreams.org/models",
+  "@type": "Place",
+  "@id": "http://appstreams.org/services/Places/AGcfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+  "id": "AGcfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+  "address": {
+    "@type": "BS7666Address",
+    "paon": "1",
+    "street": "Acacia Avenue",
+    "locality": "Anytown",
+    "region": "Anyshire",
+    "postcode": "AB1 2CD"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.75",
+    "longitude": "73.98"
+  },
+  "geo_osgb36": {
+    "easting": "1",
+    "northing": "2"
+  },
+  "uprn": "123456789012",
+  "usrn": "12345678"
+}

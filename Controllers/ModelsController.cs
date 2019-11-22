@@ -28,6 +28,26 @@ namespace org.appstreams.Controllers
         [Route("/models/{service}")]
         public IActionResult Service(string service)
         {
+            // get the json if we have one
+            string webRootPath = _hostingEnvironment.ContentRootPath;
+            string jfile = webRootPath + "/metadata/models/" + service + ".json";
+            if (System.IO.File.Exists(jfile))
+            {
+                using (StreamReader r = new StreamReader(jfile))
+                {
+                    ViewBag.Json = r.ReadToEnd();
+                }
+            }
+
+            string jfileSample = webRootPath + "/metadata/models/" + service + "-sample.json";
+            if (System.IO.File.Exists(jfileSample))
+            {
+                using (StreamReader r = new StreamReader(jfileSample))
+                {
+                    ViewBag.JsonSample = r.ReadToEnd();
+                }
+            }
+
             return View("~/views/models/" + service + "/index.cshtml");
         }
 
@@ -54,7 +74,7 @@ namespace org.appstreams.Controllers
 
             // get the json if we have one
             string webRootPath = _hostingEnvironment.ContentRootPath;
-            string jfile = webRootPath + "/views/models/" + service + "/" + model + "/" + model + ".json";
+            string jfile = webRootPath + "/metadata/models/" + service + "/" + model + ".json";
             if (System.IO.File.Exists(jfile))
             {
                 using (StreamReader r = new StreamReader(jfile))
@@ -62,8 +82,8 @@ namespace org.appstreams.Controllers
                     ViewBag.Json = r.ReadToEnd();
                 }
             }
-
-            string jfileSample = webRootPath + "/views/models/" + service + "/" + model + "/" + model + "-sample.json";
+            
+            string jfileSample = webRootPath + "/metadata/models/" + service + "/" + model + "-sample.json";
             if (System.IO.File.Exists(jfileSample))
             {
                 using (StreamReader r = new StreamReader(jfileSample))

@@ -1,0 +1,73 @@
+﻿@{ViewData["Title"] = "Waste Models - Feature Type";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    A particular type of container. Defined <a href="https://communitiesuk.github.io/waste-service-standards/models/feature-type.html">here</a>.
+</p>
+
+<p>
+    This is an instance of a type of container and derives from the abstract base type <a href="/models/Waste/ContainerType">Container Type</a>.
+</p>
+<p>
+    Reference the <a href="/taxonomies/Waste/ContainerTypes">Waste Container Types Taxnonomy</a> for the various types.
+</p>
+
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            name
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            The name of the feature.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            description
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            A description of the feature.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            manufacturer
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            The name of the container manufacturer.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

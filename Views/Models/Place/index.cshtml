@@ -1,0 +1,65 @@
+﻿@{ViewData["Title"] = "Models - Place";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    This extends the <a href="http://schema.org/Place">http://schema.org/Place</a> type with extension properties.
+</p>
+<p>
+    This address property may use the <a href="http://schema.org/address">http://schema.org/address</a> or <a href="/models/BS7666Address">BS7666 Address</a> format.
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>Place</td>
+                    </tr>
+                    <tr>
+                        <td><tt>address</tt></td>
+                        <td><a href="/models/Address">address</a></td>
+                        <td>The postal address.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>uprn</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/paon">paon</a></td>
+                        <td>A unique identifier for a property.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>usrn</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/usrn">saon</a></td>
+                        <td>A unique identifier for a street.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>geo</tt></td>
+                        <td><a href="https://schema.org/geo">geo</a></td>
+                        <td>The location in WGS84 datum.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

@@ -1,0 +1,38 @@
+﻿{
+  "Event": {
+    "type": "object",
+    "required": [
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models/Waste"
+      },
+      "@type": {
+        "type": "string",
+        "default": "Event"
+      },
+      "start_date": {
+        "type": "https://schema.org/startDate",
+        "description": "When the event takes/took place."
+      },
+      "location": {
+        "type": "http://schema.org/location",
+        "description": "Location of the event target."
+      },
+      "image": {
+        "type": "http://schema.org/image",
+        "description": "A URL to a related image."
+      },
+      "feature_type": {
+        "type": "FeatureType.json#/FeatureType",
+        "description": "The type of feature, if relevant."
+      },
+      "task": {
+        "type": "Task.json#/Task",
+        "description": "Task related to the event, if one has yet been defined."
+      }
+    }
+  }
+}

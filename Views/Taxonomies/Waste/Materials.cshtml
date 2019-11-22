@@ -1,0 +1,853 @@
+﻿@{ViewData["Title"] = "Waste - Container Type Taxonomy";}
+<h3>@ViewData["Title"]</h3>
+
+<p href="http://appstreams.org/taxonomies/Waste/Material/" class="lead">
+    The table below lists common names for typical waste containers.
+</p>
+
+<style>
+    #taxonomy h6 {
+        color:blue;
+    }
+
+    #taxonomy div a {
+        color:grey;
+        padding-left:10px;
+        font-size:small;
+    }
+</style>
+
+<div id="taxonomy">
+    <p>
+    Uses the types defined in the <a href="https://partners.wrap.org.uk/material-stream-icons">WRAP material stream</a>.
+    These are defined as part of AppStreams but use the values from the WRAP types.
+    </p>
+
+    <p href="http://appstreams.org/taxonomies/Waste/Material/">
+    E.g. http://appstreams.org/taxonomies/Waste/Material/paper, http://appstreams.org/taxonomies/Waste/Material/glass
+    (maybe we define this locally as they have no identifier, for each of their types)    
+    </p>
+
+    <h6>Textiles</h6>
+    <div id="textiles">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/textiles">Textiles</a>
+        
+    </div>
+    <div id="textiles-clothes">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/textiles-clothes">Clothes</a>
+        
+    </div>
+    <div id="textiles-shoes">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/textiles-shoes">Shoes</a>
+        
+    </div>
+    <div id="textiles-mixedTextilesAndClothes">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/textiles-mixedTextilesAndClothes">Mixed textiles &amp; clothes</a>
+        
+    </div>
+
+    <h6>Plastics</h6>
+    <div id="plastic">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/plastic">Plastics</a>
+        
+    </div>
+    <div id="plastic-bottles">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/plastic-bottles">Plastic bottles</a>
+        
+    </div>
+    <div id="plastic-bags">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/plastic-bags">Plastic bags</a>
+        
+    </div>
+    <div id="plastic-householdPlasticsWithoutFilm">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/plastic-householdPlasticsWithoutFilm">Household plastics (without film)</a>
+        
+    </div>
+    <div id="plastic-hardPlastics">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/plastic-hardPlastics">Hard plastics</a>
+        
+    </div>
+    <div id="plastic-polystyrene">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/plastic-polystyrene">Polystyrene</a>
+        
+    </div>
+
+    <h6>Paper</h6>
+    <div id="paper">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper">Paper</a>
+        
+    </div>
+    <div id="paper-newspapersAndMagazines">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-newspapersAndMagazines">Newspapers &amp; magazines</a>
+        
+    </div>
+    <div id="paper-cardboard">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-cardboard">Cardboard</a>
+        
+    </div>
+    <div id="paper-telephoneDirectories">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-telephoneDirectories">Telephone directories</a>
+        
+    </div>
+    <div id="paper-mixedPaper">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-mixedPaper">Mixed paper</a>
+        
+    </div>
+    <div id="paper-mixedPaperAndCard">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-mixedPaperAndCard">Mixed paper &amp; card</a>
+        
+    </div>
+    <div id="paper-books">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-books">Books</a>
+        
+    </div>
+    <div id="paper-corrugatedCardboard">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/paper-corrugatedCardboard">Corrugated cardboard</a>
+        
+    </div>
+
+    <h6>Glass</h6>
+    <div id="glass">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass">Glass</a>
+        
+    </div>
+    <div id="glass-mixedGlass">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass-mixedGlass">Mixed glass</a>
+        
+    </div>
+    <div id="glass-clearGlassBottlesAndJars">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass-clearGlassBottlesAndJars">Clear glass bottles and jars</a>
+        
+    </div>
+    <div id="glass-brownGlassBottlesAndJars">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass-brownGlassBottlesAndJars">Brown glass bottles and jars</a>
+        
+    </div>
+    <div id="glass-greenGlassBottlesAndJars">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass-greenGlassBottlesAndJars">Green glass bottles and jars</a>
+        
+    </div>
+    <div id="glass-blueGlassBottlesAndJars">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass-blueGlassBottlesAndJars">Blue glass bottles and jars</a>
+        
+    </div>
+    <div id="glass-flatGlass">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/glass-flatGlass">Flat glass</a>
+        
+    </div>
+
+
+    <h6>Household organics</h6>
+    <div id="householdOrganics">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdOrganics">Household organics</a>
+        
+    </div>
+    <div id="householdOrganics-gardenWaste">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdOrganics-gardenWaste">Garden waste</a>
+        
+    </div>
+    <div id="householdOrganics-foodWaste">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdOrganics-foodWaste">Food waste</a>
+        
+    </div>
+
+
+    <h6>Metals</h6>
+    <div id="metals">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals">Metals</a>
+        
+    </div>
+    <div id="metals-foodAndDrinkCans">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-foodAndDrinkCans">Food &amp; drink cans</a>
+        
+    </div>
+    <div id="metals-aluminiumCans">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-aluminiumCans">Aluminium cans</a>
+        
+    </div>
+    <div id="metals-steelCans">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-steelCans">Steel cans</a>
+        
+    </div>
+    <div id="metals-aerosols">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-aerosols">Aerosols</a>
+        
+    </div>
+    <div id="metals-foil">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-foil">Foil</a>
+        
+    </div>
+    <div id="metals-foilPieTin">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-foilPieTin">Foil (with pie tin)</a>
+        
+    </div>
+    <div id="metals-foilTrays">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-foilTrays">Foil trays</a>
+        
+    </div>
+    <div id="metals-scrapMetal">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-scrapMetal">Scrap metal</a>
+        
+    </div>
+    <div id="metals-largeTins">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-largeTins">Large tins</a>
+        
+    </div>
+    <div id="metals-mixedMetals">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-mixedMetals">Mixed metals</a>
+        
+    </div>
+    <div id="metals-mixedMetalsWithFoil">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-mixedMetalsWithFoil">Mixed metals (with foil)</a>
+        
+    </div>
+    <div id="metals-mixedMetalsWithFoilWithoutAerosol">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/metals-mixedMetalsWithFoilWithoutAerosol">Mixed metals (with foil but without aerosol)</a>
+        
+    </div>
+
+
+    <h6>Automotive waste</h6>
+    <div id="automotiveWaste">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/automotiveWaste">Automotive waste</a>
+        
+    </div>
+    <div id="automotiveWaste-usedEngineOil">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/automotiveWaste-usedEngineOil">Used engine oil</a>
+        
+    </div>
+    <div id="automotiveWaste-carBatteries">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/automotiveWaste-carBatteries">Car batteries</a>
+        
+    </div>
+    <div id="automotiveWaste-tyres">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/automotiveWaste-tyres">Tyres</a>
+        
+    </div>
+
+    <h6>Building materials</h6>
+    <div id="buildingMaterials">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/buildingMaterials">Building materials</a>
+        
+    </div>
+    <div id="buildingMaterials-soil">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/buildingMaterials-soil">Soil</a>
+        
+    </div>
+    <div id="buildingMaterials-hardcoreAndRrubble">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/buildingMaterials-hardcoreAndRrubble">Hardcore &amp; rubble</a>
+        
+    </div>
+    <div id="buildingMaterials-woodAndTimber">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/buildingMaterials-woodAndTimber">Wood &amp; timber</a>
+        
+    </div>
+    <div id="buildingMaterials-plasterboard">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/buildingMaterials-plasterboard">Plasterboard</a>
+        
+    </div>
+    <div id="buildingMaterials-upvcFrames">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/buildingMaterials-upvcFrames">UPVC frames</a>
+        
+    </div>
+
+    <h6>Other recyclables</h6>
+    <div id="otherRecyclables">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables">Other recyclables</a>
+        
+    </div>
+    <div id="otherRecyclables-paint">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-paint">Paint</a>
+        
+    </div>
+    <div id="otherRecyclables-spectacles">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-spectacles">Spectacles</a>
+        
+    </div>
+    <div id="otherRecyclables-cartons">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-cartons">Cartons</a>
+        
+    </div>
+    <div id="otherRecyclables-furniture">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-furniture">Furniture</a>
+        
+    </div>
+    <div id="otherRecyclables-tapesAndDiscs">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-tapesAndDiscs">Tapes &amp; discs</a>
+        
+    </div>
+    <div id="otherRecyclables-discs">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-discs">Discs</a>
+        
+    </div>
+    <div id="otherRecyclables-tapes">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-tapes">Tapes</a>
+        
+    </div>
+    <div id="otherRecyclables-handTools">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-handTools">Hand tools</a>
+        
+    </div>
+    <div id="otherRecyclables-cookingOil">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-cookingOil">Cooking oil</a>
+        
+    </div>
+    <div id="otherRecyclables-carpet">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-carpet">Carpet</a>
+        
+    </div>
+    <div id="otherRecyclables-mattresses">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-mattresses">Mattresses</a>
+    </div>
+    <div id="otherRecyclables-bicycles">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/otherRecyclables-bicycles">Bicycles</a>        
+    </div>
+
+
+    <h6>Waste Electronic and Electrical Equipment (WEEE)</h6>
+    <div id="weee">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee">Waste Electronic and Electrical Equipment (WEEE)</a>        
+    </div>
+    <div id="weee-Electrical">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-Electrical">Electrical</a>
+    </div>
+    <div id="weee-fridgesAndFreezers">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-fridgesAndFreezers">Fridges &amp; freezers</a>
+    </div>
+    <div id="weee-Batteries">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-Batteries">Batteries</a>
+    </div>
+    <div id="weee-telecomsAndComputersPhoneAndMouse">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-telecomsAndComputersPhoneAndMouse">Telecoms &amp; computers – phone &amp; mouse</a>
+    </div>
+    <div id="weee-telecomsAndComputersFaxAndCpu">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-telecomsAndComputersFaxAndCpu">Telecoms &amp; computers – fax &amp; cpu</a>
+    </div>
+    <div id="weee-smallAppliancesIrons">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-smallAppliancesIrons">Small appliances – irons</a>
+    </div>
+    <div id="weee-smallAppliancesRadios">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-smallAppliancesRadios">Small appliances – radios</a>
+    </div>
+    <div id="weee-smallAppliancesHairDryers">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-smallAppliancesHairDryers">Small appliances – hair dryers</a>
+    </div>
+    <div id="weee-smallAppliancesMixed">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-smallAppliancesMixed">Small appliances – mixed</a>
+    </div>
+    <div id="weee-largeAppliancesMixed">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-largeAppliancesMixed">Large appliances – mixed</a>
+    </div>
+    <div id="weee-largeAppliancesWashingMachine">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-largeAppliancesWashingMachine">Large appliances – washing machine</a>
+    </div>
+    <div id="weee-fluorescentTubes">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-fluorescentTubes">Fluorescent tubes</a>
+    </div>
+    <div id="weee-lowEnergyBulbs">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-lowEnergyBulbs">Low energy bulbs</a>
+    </div>
+    <div id="weee-mixedLightBulbs">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-mixedLightBulbs">Mixed light bulbs</a>
+    </div>
+    <div id="weee-tvAndMonitors">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-tvAndMonitors">TV &amp; monitors</a>
+    </div>
+    <div id="weee-mobilePhones">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-mobilePhones">Mobile phones</a>
+    </div>
+    <div id="weee-printerCartridges">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/weee-printerCartridges">Printer cartridges</a>
+    </div>
+
+
+    <h6>Household waste</h6>
+    <div id="householdWaste">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste">Household waste</a>
+    </div>
+    <div id="householdWaste-householdHazardousWaste">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste-householdHazardousWaste">Household hazardous waste</a>
+    </div>
+    <div id="householdWaste-householdMaterials">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste-householdMaterials">Household materials</a>
+    </div>
+    <div id="householdWaste-gasBottles">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste-gasBottles">Gas bottles</a>
+    </div>
+    <div id="householdWaste-gasBottlesWithHealthAndSafetyAdditionalInformation">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste-gasBottlesWithHealthAndSafetyAdditionalInformation">Gas bottles with health and safety additional information</a>
+    </div>
+    <div id="householdWaste-asbestos">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste-asbestos">Asbestos</a>
+    </div>
+    <div id="householdWaste-householdAndGardenChemicals">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/householdWaste-householdAndGardenChemicals">Household & garden chemicals</a>
+    </div>
+
+
+    <h6>Mixed recyclables</h6>
+    <div id="mixedRecyclables">
+        <a href="http://appstreams.org/taxonomies/Waste/Material/mixedRecyclables">Mixed recyclables</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8">
+        <div>
+            <h3>Example Categories</h3>
+            <table class="table">
+              <thead>
+                <tr id="LC1">
+                  <td id="L1" data-line-number="1"></td>
+                    <th>material_category</th>
+                    <th>material_item</th>
+                    <th>stream</th>
+                    <th>color</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr id="LC2">
+                    <td id="L2" data-line-number="2"></td>
+                      <td>Cardboard</td>
+                      <td></td>
+                      <td>cardboard</td>
+                      <td>0089d1</td>
+                  </tr>
+                  <tr id="LC3">
+                    <td id="L3" data-line-number="3"></td>
+                      <td></td>
+                      <td>Cardboard egg boxes</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC4">
+                    <td id="L4" data-line-number="4"></td>
+                      <td></td>
+                      <td>Cardboard fruit and veg punnets</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC5">
+                    <td id="L5" data-line-number="5"></td>
+                      <td></td>
+                      <td>Cardboard sleeves</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC6">
+                    <td id="L6" data-line-number="6"></td>
+                      <td></td>
+                      <td>Cereal boxes</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC7">
+                    <td id="L7" data-line-number="7"></td>
+                      <td></td>
+                      <td>Corrugated cardboard</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC8">
+                    <td id="L8" data-line-number="8"></td>
+                      <td></td>
+                      <td>Food and drink cartons</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC9">
+                    <td id="L9" data-line-number="9"></td>
+                      <td></td>
+                      <td>Toilet roll tubes</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC10">
+                    <td id="L10" data-line-number="10"></td>
+                      <td>Foil</td>
+                      <td></td>
+                      <td>foil</td>
+                      <td>54656f</td>
+                  </tr>
+                  <tr id="LC11">
+                    <td id="L11" data-line-number="11"></td>
+                      <td></td>
+                      <td>Aluminium foil</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC12">
+                    <td id="L12" data-line-number="12"></td>
+                      <td></td>
+                      <td>Foil trays</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC13">
+                    <td id="L13" data-line-number="13"></td>
+                      <td>Glass</td>
+                      <td></td>
+                      <td>glass</td>
+                      <td>00a9a4</td>
+                  </tr>
+                  <tr id="LC14">
+                    <td id="L14" data-line-number="14"></td>
+                      <td></td>
+                      <td>Glass bottles and jars</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC15">
+                    <td id="L15" data-line-number="15"></td>
+                      <td>Metal packaging</td>
+                      <td></td>
+                      <td></td>
+                      <td>54656f</td>
+                  </tr>
+                  <tr id="LC16">
+                    <td id="L16" data-line-number="16"></td>
+                      <td></td>
+                      <td>Aerosols</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC17">
+                    <td id="L17" data-line-number="17"></td>
+                      <td></td>
+                      <td>Drinks cans</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC18">
+                    <td id="L18" data-line-number="18"></td>
+                      <td></td>
+                      <td>Food tins</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC19">
+                    <td id="L19" data-line-number="19"></td>
+                      <td></td>
+                      <td>Metal lids from glass jars</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC20">
+                    <td id="L20" data-line-number="20"></td>
+                      <td>Others</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC21">
+                    <td id="L21" data-line-number="21"></td>
+                      <td></td>
+                      <td>Batteries</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC22">
+                    <td id="L22" data-line-number="22"></td>
+                      <td>Paper</td>
+                      <td></td>
+                      <td>paper</td>
+                      <td>0089d1</td>
+                  </tr>
+                  <tr id="LC23">
+                    <td id="L23" data-line-number="23"></td>
+                      <td></td>
+                      <td>Brown envelopes</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC24">
+                    <td id="L24" data-line-number="24"></td>
+                      <td></td>
+                      <td>Junk mail</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC25">
+                    <td id="L25" data-line-number="25"></td>
+                      <td></td>
+                      <td>Magazines</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC26">
+                    <td id="L26" data-line-number="26"></td>
+                      <td></td>
+                      <td>Newspapers</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC27">
+                    <td id="L27" data-line-number="27"></td>
+                      <td></td>
+                      <td>Shredded paper</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC28">
+                    <td id="L28" data-line-number="28"></td>
+                      <td></td>
+                      <td>Telephone directories</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC29">
+                    <td id="L29" data-line-number="29"></td>
+                      <td></td>
+                      <td>Window envelopes</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC30">
+                    <td id="L30" data-line-number="30"></td>
+                      <td></td>
+                      <td>Yellow pages</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC31">
+                    <td id="L31" data-line-number="31"></td>
+                      <td>Plastic bottles</td>
+                      <td></td>
+                      <td>plastic bottles</td>
+                      <td>ee3f22</td>
+                  </tr>
+                  <tr id="LC32">
+                    <td id="L32" data-line-number="32"></td>
+                      <td></td>
+                      <td>Household cleaner and detergent bottles</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC33">
+                    <td id="L33" data-line-number="33"></td>
+                      <td></td>
+                      <td>Plastic milk bottles</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC34">
+                    <td id="L34" data-line-number="34"></td>
+                      <td></td>
+                      <td>Plastics drinks bottles</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC35">
+                    <td id="L35" data-line-number="35"></td>
+                      <td></td>
+                      <td>Toiletries and shampoo bottles</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC36">
+                    <td id="L36" data-line-number="36"></td>
+                      <td>Plastic packaging</td>
+                      <td></td>
+                      <td>household plastics (without film)</td>
+                      <td>ee3f22</td>
+                  </tr>
+                  <tr id="LC37">
+                    <td id="L37" data-line-number="37"></td>
+                      <td></td>
+                      <td>Carrier bags</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC38">
+                    <td id="L38" data-line-number="38"></td>
+                      <td></td>
+                      <td>Clingwrap</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC39">
+                    <td id="L39" data-line-number="39"></td>
+                      <td></td>
+                      <td>Food pots and tubs</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC40">
+                    <td id="L40" data-line-number="40"></td>
+                      <td></td>
+                      <td>Margarine tubs</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC41">
+                    <td id="L41" data-line-number="41"></td>
+                      <td></td>
+                      <td>Plant pots</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC42">
+                    <td id="L42" data-line-number="42"></td>
+                      <td></td>
+                      <td>Plastic pouches</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC43">
+                    <td id="L43" data-line-number="43"></td>
+                      <td></td>
+                      <td>Plastic trays</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC44">
+                    <td id="L44" data-line-number="44"></td>
+                      <td></td>
+                      <td>Plastic wrappers</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC45">
+                    <td id="L45" data-line-number="45"></td>
+                      <td></td>
+                      <td>Yoghurt pots</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC46">
+                    <td id="L46" data-line-number="46"></td>
+                      <td>Textiles</td>
+                      <td></td>
+                      <td>textiles</td>
+                      <td>fd8812</td>
+                  </tr>
+                  <tr id="LC47">
+                    <td id="L47" data-line-number="47"></td>
+                      <td>Food waste</td>
+                      <td></td>
+                      <td>food waste</td>
+                      <td>18b26a</td>
+                  </tr>
+                  <tr id="LC48">
+                    <td id="L48" data-line-number="48"></td>
+                      <td></td>
+                      <td>Bread, cake, pastries</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC49">
+                    <td id="L49" data-line-number="49"></td>
+                      <td></td>
+                      <td>Dairy products - cheese and eggs</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC50">
+                    <td id="L50" data-line-number="50"></td>
+                      <td></td>
+                      <td>Raw and cooked fish and meat including bones</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC51">
+                    <td id="L51" data-line-number="51"></td>
+                      <td></td>
+                      <td>Raw and cooked vegetables including peelings</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC52">
+                    <td id="L52" data-line-number="52"></td>
+                      <td></td>
+                      <td>Rice, pasta, beans</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC53">
+                    <td id="L53" data-line-number="53"></td>
+                      <td></td>
+                      <td>Teabags and coffee grounds</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC54">
+                    <td id="L54" data-line-number="54"></td>
+                      <td></td>
+                      <td>Uneaten food and plate scrapings</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC55">
+                    <td id="L55" data-line-number="55"></td>
+                      <td>Garden waste</td>
+                      <td></td>
+                      <td>garden waste</td>
+                      <td>18b26a</td>
+                  </tr>
+                  <tr id="LC56">
+                    <td id="L56" data-line-number="56"></td>
+                      <td></td>
+                      <td>Flowers</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC57">
+                    <td id="L57" data-line-number="57"></td>
+                      <td></td>
+                      <td>Grass cuttings</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC58">
+                    <td id="L58" data-line-number="58"></td>
+                      <td></td>
+                      <td>Leaves</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC59">
+                    <td id="L59" data-line-number="59"></td>
+                      <td></td>
+                      <td>Plants</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC60">
+                    <td id="L60" data-line-number="60"></td>
+                      <td></td>
+                      <td>Prunings and twigs</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC61">
+                    <td id="L61" data-line-number="61"></td>
+                      <td></td>
+                      <td>Weeds</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+                  <tr id="LC62">
+                    <td id="L62" data-line-number="62"></td>
+                      <td>Household waste</td>
+                      <td></td>
+                      <td>household waste</td>
+                      <td>0</td>
+                  </tr>
+                  <tr id="LC63">
+                    <td id="L63" data-line-number="63"></td>
+                      <td>Mixed recyclables</td>
+                      <td></td>
+                      <td>mixed recyclables</td>
+                      <td>8dc63f</td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+
+        <h3>Notes</h3>
+        <ul>
+            <li>The original source of this data is <a href="https://communitiesuk.github.io/waste-service-standards/taxonomies/materials.html">Waste Service Standards</a></li>
+            <li>The core source is <a href="http://www.wrap.org.uk/">The Waste and Resources Action Programme.</a></li>
+        </ul>
+    </div>
+</div>

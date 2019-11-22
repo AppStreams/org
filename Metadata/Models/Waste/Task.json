@@ -1,0 +1,75 @@
+﻿{
+  "Task": {
+    "type": "object",
+    "description": "A Task could prepresent any form of work required.",
+    "required": [
+      "@type"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models/Waste"
+      },
+      "@type": {
+        "type": "string",
+        "description": "The type of the Waste task.",
+        "enum": [
+          "EmptyBinTask",
+          "StreetCleansingTask",
+          "FlytippingCleanupTask"
+        ]
+      },
+      "@id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "A unique identififier for this instance of the task.",
+        "example": "http://appstreams.org/services/Waste/Tasks/gGcfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+      },
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "A uuid identifier to this particular instance of the service.",
+        "example": "gGcfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+      },
+      "name": {
+        "type": "string",
+        "description": "Identifer for the Task."
+      },
+      "description": {
+        "type": "string",
+        "description": "A short description of the Task."
+      },
+      "status": {
+        "type": "http://schema.org/actionStatus",
+        "description": "The status of the Task."
+      },
+      "location": {
+        "type": "http://schema.org/location",
+        "description": "Location information."
+      },
+      "start_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Planned start date."
+      },
+      "end_date": {
+        "type": "string",
+        "format": "date",
+        "description": "The end date."
+      },
+      "actual_start_date": {
+        "type": "string",
+        "format": "date",
+        "description": "The actual start date."
+      },
+      "features": {
+        "type": "array",
+        "description": "List of related features.",
+        "items": {
+          "$ref": "Feature.json#/Feature"
+        }
+      }
+    }
+  }
+}

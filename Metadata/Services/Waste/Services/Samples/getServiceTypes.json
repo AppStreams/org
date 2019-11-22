@@ -1,0 +1,60 @@
+﻿[
+  {
+    "@context": [
+      "http://appstreams.org/models/Waste",
+      { "schema": "http://schema.org/" }
+    ],
+    "@type": "WasteService",
+    "@id": "http://appstreams.org/services/Waste/Services/ServiceTypes/992feeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "id": "11cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "name": "Blue and Brown Bins Collection",
+    "description": "Please put your brown and blue bins out for collection.",
+
+    // The type of containers picked up
+    "feature_types": [
+      {
+        "@type": "FeatureType",
+        "@id": "http://appstreams.org/models/Waste/FeatureType/00cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+        "id": "00cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+        "name": "Wheelie bin",
+        "description": "Blue wheelie bin",
+        "color": "blue"
+      },
+      {
+        "@type": "FeatureType",
+        "@id": "http://appstreams.org/models/Waste/FeatureType/77afeeb8-aefd-4f2b-8cb0-b3186870ad14",
+        "id": "77afeeb8-aefd-4f2b-8cb0-b3186870ad14",
+        "name": "Wheelie bin",
+        "description": "Brown wheelie bin",
+        "color": "brown"
+      }
+    ],
+    "service_area": {
+      "@type": "schema:AdministrativeArea",
+      "schema:address": {
+        "@type": "PostalAddress",
+        "addressCountry": "gb",
+        "addressLocality": "Glasgow"
+      }
+    },
+    "available_channel": {
+      "@type": "ServiceChannel",
+      "name": "Household waste and street maintenance",
+      "service_phone": {
+        "@type": "ContactPoint",
+        "telephone": "0123456789",
+        "email": "waste@authority.gov.uk"
+      },
+      "service_url": "http://www.example.gov.uk/waste"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Example Council",
+      "url": "http://www.authority.gov.uk"
+    },
+    "service_operator": {
+      "@type": "Organization",
+      "name": "Example Waste Operator Co"
+    }
+  }
+]

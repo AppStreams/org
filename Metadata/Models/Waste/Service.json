@@ -1,0 +1,101 @@
+﻿{
+  "Service": {
+    "type": "object",
+    "description": "Inherits from http://schema.org/GovernmentService",
+    "required": [
+      "@type",
+      "@id",
+      "id"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models/Waste"
+      },
+      "@type": {
+        "type": "string",
+        "description": "The type of service - WasteService",
+        "default": "WasteService"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "A uuid logical identifier for this type of service ('Green and Blue Bins' etc) for the authority.",
+        "example": "99cfeeb8-aefd-4f2b-8cb0-b3186870ad14 - E.g. Resolved at http://appstreams.org/services/Waste/Services/ServiceTypes/99cfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+      },
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "A uuid identifier to this particular instance of the service.",
+        "example": "11cfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+      },
+      "name": {
+        "type": "string",
+        "description": "A name for this service."
+      },
+      "description": {
+        "type": "string",
+        "description": "A short description of the service."
+      },
+      "esd_url": {
+        "type": "string",
+        "format": "uri",
+        "description": "Link to the ESD standards Url."
+      },
+      "frequency": {
+        "type": "string",
+        "description": "How often it runs, e.g. weekly.",
+        "enum": [
+          "weekly",
+          "alternate weekly"
+        ]
+      },
+      "feature_types": {
+        "type": "array",
+        "description": "The container types that are collected.",
+        "items": {
+          "$ref": "FeatureType.json#/FeatureType"
+        }
+      },
+      "schedule": {
+        "type": "http://schema.org/Schedule",
+        "description": "The schedule for this service."
+      },
+      "schedulePeriod": {
+        "type": "http://schema.org/Event",
+        "description": "Dates when this scheduled service starts and ends."
+      },
+      "next_collections": {
+        "type": "array",
+        "description": "List of dates of next collections.",
+        "items": {
+          "$ref": "Task.json#/Task"
+        }
+      },
+      "last_collections": {
+        "type": "array",
+        "description": "List of dates of previous collections.",
+        "items": {
+          "$ref": "Task.json#/Task"
+        }
+      },
+      "available_channel": {
+        "type": "http://schema.org/availableChannel",
+        "description": "A means of accessing the service."
+      },
+      "provider": {
+        "type": "http://schema.org/provider",
+        "description": "The council providing the service."
+      },
+      "service_area": {
+        "type": "http://schema.org/serviceArea",
+        "description": "The geographic area where the service is provided."
+      },
+      "service_operator": {
+        "type": "http://schema.org/serviceOperator",
+        "description": "The operator of the service, if different to the provider."
+      }
+    }
+  }
+}

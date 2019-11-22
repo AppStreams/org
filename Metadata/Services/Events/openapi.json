@@ -1,0 +1,468 @@
+﻿{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://appstreams.org/v1"
+    },
+    {
+      "url": "http://appstreams.org/v1"
+    }
+  ],
+  "info": {
+    "description": "This provides Events definition to provide event subscription and management services.",
+    "version": "1.0.0",
+    "title": "Eventing Services",
+    "termsOfService": "http://appstreams.org/privacy/",
+    "contact": {
+      "email": "info@appstreams.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "core",
+      "description": "Core Events",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Events"
+      }
+    },
+    {
+      "name": "management",
+      "description": "Event Management",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://appstreams.org/services/Events"
+      }
+    }
+  ],
+  "paths": {
+    "/services/events?{eventTypesId}&{country}&{postcode}&{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "core"
+        ],
+        "summary": "Get the list of bin services schedules for the location",
+        "description": "Returns the unique list of collection combinations scheduled for this location. Therefore if Brown and Blue are picked up at the same time, it will return these as a single service instance. If Brown and Blue are picked up this week and Green is next week, that would return two service instances.",
+        "operationId": "getEvents",
+        "parameters": [
+          {
+            "name": "eventTypesId",
+            "in": "query",
+            "description": "A comma separated list of Event Types to filter by.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "query",
+            "description": "The full postcode to get the bin service schedule for",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../Models/Event.json#/Event"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/events/{eventId}": {
+      "get": {
+        "tags": [
+          "core"
+        ],
+        "summary": "Gets the specified event",
+        "description": "This returns the detail of the specified event.",
+        "operationId": "getEvent",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "The id for the event.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../Models/Event.json#/Event"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/eventsTypes?{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "core"
+        ],
+        "summary": "Gets a list of the types of Events available",
+        "description": "Returns a paged list of Event Types with their identifiers. The list of event types can be found at Event Type Taxonomy.",
+        "operationId": "getEventTypes",
+        "parameters": [
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../Models/EventType.json#/EventType"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/eventsTypes/{eventTypeId}": {
+      "get": {
+        "tags": [
+          "core"
+        ],
+        "summary": "Gets the specified Event type",
+        "description": "The list of event types can be found at Event Type Taxonomy.",
+        "operationId": "getEventType",
+        "parameters": [
+          {
+            "name": "eventTypeId",
+            "in": "path",
+            "description": "The id for the event type.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../Models/EventType.json#/EventType"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/events/subscribe": {
+      "post": {
+        "tags": [
+          "management"
+        ],
+        "summary": "Subscribes to events",
+        "description": "Creates a subscription for a user for a place - the definition of the unique userId is system specific.",
+        "operationId": "subscribe",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "The consumer subscribing to the events.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventTypeId",
+            "in": "query",
+            "description": "An array of EventType id's to subcribe to. Defaults to all.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "The ISO 3166 two letter country code to limit your query to",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "gb"
+            }
+          },
+          {
+            "name": "postcode",
+            "in": "query",
+            "description": "The full postcode to get the bin service schedule for",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/events/subscriptions/{userId}?{ps}&{pn}": {
+      "get": {
+        "tags": [
+          "management"
+        ],
+        "summary": "Gets a list of subscriptions for a user",
+        "description": "This returns an array of the current subscriptions that have been created for the specified user.",
+        "operationId": "subscriptions",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "The unique userId.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ps",
+            "in": "query",
+            "description": "The page size to return",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pn",
+            "in": "query",
+            "description": "The page number to return, 0 returns the first page.",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../../Models/Event.json#/Event"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/subscription/{subscriptionId}": {
+      "get": {
+        "tags": [
+          "management"
+        ],
+        "summary": "Gets the specified subscription",
+        "description": "This returns the detail of the specified subscription.",
+        "operationId": "subscription",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The id for the subscription.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../Models/Subscription.json#/Subscription"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/services/subscription/unsubscribe": {
+      "post": {
+        "tags": [
+          "management"
+        ],
+        "summary": "Unsubscribes from a subscription",
+        "description": "Unsubscribes a user Id from a subscription - the definition of the unique userId is system specific.",
+        "operationId": "unsubscribe",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The id for the subscription.",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about AppStreams",
+    "url": "http://appstreams.org"
+  },
+  "components": {
+    "requestBodies": null,
+    "securitySchemes": null
+  }
+}

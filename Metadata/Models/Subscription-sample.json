@@ -1,0 +1,13 @@
+﻿{
+  "@context": "http://appstreams.org/models",
+  "@type": "Subscription",
+  "id": "98cfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+  "userId": "5ce7a728-9aac-430f-9c49-f729ad5a5963",
+  "filter": {
+    "@context": "http://appstreams.org/models",
+    "@type": "Filter",
+    "id": "55afeeb8-aefd-4f2b-8cb0-b3186870ad14",
+    "name": "Waste Collection",
+    "type": [ "http://appstreams.org/taxonomies/EventTypes/Waste/planned_collection" ]
+  }
+}

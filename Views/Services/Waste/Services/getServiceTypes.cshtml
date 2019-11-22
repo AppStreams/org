@@ -1,0 +1,54 @@
+﻿<div class="row" id="service-getServiceTypes">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Explodes details on the specified service type(s)</h4>
+                <p>
+                    Returns full details on the specified service type(s) - without any associated schedule or task data.
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services/Waste/Services/ServiceTypes?{serviceTypeIds}&{paging}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>serviceTypeIds</tt></td>
+                            <td>string</td>
+                            <td>true</td>
+                            <td></td>
+                            <td>A comma separated list of one or more service type UUID identifiers to explode.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>paging</tt></td>
+                            <td><a href="/services/parameters">Paging</a></td>
+                            <td>false</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters">Common Paging Parameter</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/Services/ServiceTypes?serviceTypeIds=11cfeeb8-aefd-4f2b-8cb0-b3186870ad14</pre>
+                </div>
+
+                <p class="text-success"><strong>Example Responses</strong></p>
+                <p>HTTP code: 200</p>
+                <div class="jumbotron" style="padding:0;"><pre>@org.appstreams.Utility.ReadFromFile("waste/services/samples/getServiceTypes.json")</pre></div>
+            </div>
+        </div>
+    </div>
+</div>

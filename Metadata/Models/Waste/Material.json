@@ -1,0 +1,39 @@
+﻿{
+  "Material": {
+    "type": "object",
+    "required": [
+      "@id",
+      "name"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models/Waste"
+      },
+      "@type": {
+        "type": "string",
+        "default": "Material"
+      },
+      "@id": {
+        "description": "A dereferencable Id for this type instance",
+        "type": "string",
+        "format": "uri",
+        "example": "http://appstreams.org/models/Waste/Material/paper"
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the material.",
+        "example": "paper"
+      },
+      "color": {
+        "type": "https://schema.org/color",
+        "description": "The matching <a href=\"https://partners.wrap.org.uk/material-stream-icons/\">WRAP material stream</a> colour."
+      },
+      "image": {
+        "type": "https://schema.org/image",
+        "description": "The Url to an image representing the material."
+      }
+    }
+  }
+}

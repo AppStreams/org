@@ -1,0 +1,70 @@
+﻿<div class="row" id="services-createReminder">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Creates a scheduled reminder for an event</h4>
+                <p>
+                    Creates a subscription for a user Id - the definition of the unique userId is system specific.
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest post">post</span>
+                    <span>/services/events/subscribe</span>
+                </div>
+                <p><strong>Request parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>userId</tt></td>
+                            <td>string</td>
+                            <td>true</td>
+                            <td></td>
+                            <td>The consumer subscribing to the events.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>eventTypeId</tt></td>
+                            <td>array</td>
+                            <td>false</td>
+                            <td></td>
+                            <td>A list of <a href="/taxonomies/EventTypes">Event Type Id's</a> to subcribe to. Defaults to all.</td>
+                        </tr>
+                        <tr>
+                            <td><tt>location</tt></td>
+                            <td><a href="/services/parameters">Location</a></td>
+                            <td>true</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters">Common Location Parameter</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-primary"><strong>Returns</strong></p>
+                <p>
+                    Returns HTTP 200 success or a HTTP 400 error if an exception occurs.
+                </p>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Request:</p>
+                <pre>http://appstreams.org/services/events/subscribe</pre>
+                <div class="jumbotron" style="padding:0;">                    
+                    <pre>
+{
+    "userId": "5ce7a728-9aac-430f-9c49-f729ad5a5963",
+    "eventTypeId": [
+        "waste_planned_collection"
+    ]
+}
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿<div class="row" id="services-getEventTypes">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Gets a list of the types of Events available</h4>
+                <p>
+                    Returns a paged list of Event Types with their identifiers.
+                    The list of event types can be found at <a href="/taxonomies/EventTypes">Event Type Taxonomy.</a>
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services/EventTypes?{paging}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>paging</tt></td>
+                            <td><a href="/services/parameters#paging">Paging</a></td>
+                            <td>false</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters#paging">Common Paging Parameter</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-primary"><strong>Returns</strong></p>
+                <p>
+                    Returns an array of <a href="/models/EventType">EventTypes</a>.
+                </p>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/EventTypes</pre>
+                </div>
+
+                <p class="text-success"><strong>Example Responses</strong></p>
+                <p>HTTP code: 200</p>
+                <div class="jumbotron" style="padding:0;"><pre>@org.appstreams.Utility.ReadFromFile("samples/getEventTypes.json")</pre></div>
+            </div>
+        </div>
+    </div>
+</div>

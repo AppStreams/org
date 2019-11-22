@@ -1,0 +1,80 @@
+﻿@{ViewData["Title"] = "Waste Collection";}
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    This provides Bin Collection service definition to provide bin collection schedule and next bin collection data.
+</p>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Scheduling Services
+            </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+            <p>
+                Services for finding out about collection schedules and collection services.
+            </p>
+            <ul>
+                <li><a href="#service-getServices">Get the list of bin services schedules for the location</a></li>
+                <li><a href="#service-getServicesBetween">Get the list of bin services scheduled for the location between the start and end date</a></li>
+                <li><a href="#service-getClosestServices">Get the list of bin services scheduled for the location closest to the specified date</a></li>
+                <li><a href="#service-getNext">Gets the next service pickup of any kind scheduled for the location</a></li>
+                <li><a href="#service-getService">Get full details for the specified bin service schedule for the location</a></li>            
+            </ul>
+                @Html.Partial("Waste/Services/getServices")
+                @Html.Partial("Waste/Services/getServicesBetween")
+                @Html.Partial("Waste/Services/getClosestServices")
+                @Html.Partial("Waste/Services/getNext")
+                @Html.Partial("Waste/Services/getService")
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Service Type Services
+            </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+            <p>
+                The services needed to find out about different kinds of waste collection services offered.
+            </p>
+            <ul>
+                <li><a href="#service-getServiceTypes">Explodes details on the specified service type(s).</a></li>
+            </ul>
+                @Html.Partial("Waste/Services/getServiceTypes")
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <span data-feather="plus-square" style="width:17px;height:auto;margin-top:-3px;"></span> Feature Type Services
+            </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+            <p>
+                The services needed to find out about feature types such as waste containers.
+            </p>
+            <ul>
+                <li><a href="#service-getFeatureTypes">Explodes details on the specified feature type(s).</a></li>
+            </ul>
+                @Html.Partial("Waste/Services/getFeatureTypes")
+            </div>
+        </div>
+    </div>
+</div>

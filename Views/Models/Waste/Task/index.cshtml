@@ -1,0 +1,149 @@
+﻿@{ViewData["Title"] = "Waste Models - Task";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    A Task could prepresent any form of work required in the council’s region, e.g.:
+
+- a scheduled bin collection
+- cleanup of a fly tip
+- maintenance of a street
+</p>
+
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @@type
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            The type of the Waste task - one of "EmptyBinTask", "StreetCleansingTask", "FlytippingCleanupTask".
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @@id
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            A unique identififier for this instance of the task.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            name
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            Identifer for the Task.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            description
+                        </td>
+                        <td>
+                            <a href="https://schema.org/Text">string</a>
+                        </td>
+                        <td>
+                            A short description of the Task.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            status
+                        </td>
+                        <td>
+                            <a href="http://schema.org/actionStatus">actionStatus</a>
+                        </td>
+                        <td>
+                            The status of the Task.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            location
+                        </td>
+                        <td>
+                            <a href="http://schema.org/location">location</a> set to a
+                            <a href="/models/Place">Place</a> type
+                        </td>
+                        <td>
+                            Location which should be one of the
+                            <a href="/models/Place">Place</a> types.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            start_date
+                        </td>
+                        <td>
+                            <a href="date">date</a>
+                        </td>
+                        <td>
+                            Planned start date.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            end_date
+                        </td>
+                        <td>
+                            <a href="date">date</a>
+                        </td>
+                        <td>
+                            Planned end date.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            actual_start_date
+                        </td>
+                        <td>
+                            <a href="date">date</a>
+                        </td>
+                        <td>
+                            The actual start date.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            features
+                        </td>
+                        <td>
+                            <a href="/models/Waste/Feature">Feature</a>
+                        </td>
+                        <td>
+                            List of related features.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

@@ -1,29 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<h1>Services</h1>
+﻿@{ViewData["Title"] = "Services";}
+<h3>@ViewData["Title"]</h3>
 
-<p class="lead">This defines the initial collection of services that we have worked on so far.</p>
-<p>
-    Serices generally consist of the following elements:
-    <br />
-    <ul>
-        <li>Service Definition</li>
-        <li>Models Used</li>
-        <li>Taxonomies Used</li>
-        <li>Request Format</li>
-        <li>Response Format</li>        
-    </ul>
-</p>
 
-<h3>Directory</h3>
-<ul>
-    <li>
-        <a href="/services/Waste">Waste Services</a>
-        <ul>
+<p class="lead">This defines the initial collection of services that we have worked on so far but more are being added in the coming months.</p>
+<div class="row">
+    <div class="col-8">
+        <ul style="padding-left:0;list-style-type: none;">
             <li>
-                <a href="/services/Waste/Collection">Bin Collection</a>
+                <span data-feather="file-text" style="width:14px;height:auto;"></span> <a href="/services/Waste">Waste Services</a>
+                <div>
+                    <small class="text">Services related to waste collection and management.</small>
+                </div>
+                <ul style="padding-left:25px;list-style-type: none;">
+                    <li>
+                        <span data-feather="settings" style="width:14px;height:auto;"></span> <a href="/services/Waste/Services">Bin Collection</a>
+                        <div style="padding-left:17px">
+                            <small class="text-muted">Bin collection services and events.</small>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span data-feather="settings" style="width:14px;height:auto;"></span> <a href="/services/events">Events</a>
+                <div style="padding-left:17px">
+                    <small class="text-muted">Eventing services used across all services.</small>
+                </div>
             </li>
         </ul>
-    </li>
-</ul>
+        <p>
+            There are also some <a href="/services/parameters">Common Parameter Formats</a> that are used across many of the services.
+        </p>
+    </div>
+    <div class="col">
+        <div class="alert alert-warning" role="alert" style="text-align:left">
+            Services generally consist of the following elements:
+            <br />
+            <ul style="padding-left:20px">
+                <li>Service Definition</li>
+                <li>Models Used</li>
+                <li>Taxonomies Used</li>
+                <li>Request Format</li>
+                <li>Response Format</li>        
+            </ul>
+        </div>
+    </div>
+</div>

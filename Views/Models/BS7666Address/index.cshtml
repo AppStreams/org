@@ -1,0 +1,80 @@
+﻿@{ViewData["Title"] = "Models - BS7666 Address";}
+<h3>@ViewData["Title"]</h3>
+<p>
+    This defines an address in <a href="http://landregistry.data.gov.uk/def/common/BS7666Address">UK Land Registry BS7666 Address format</a>.
+</p>
+<p>
+    This address format can be used in place of a <a href="schema.org/address">schema.org/address</a>.
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>BS7666Address</td>
+                    </tr>
+                    <tr>
+                        <td><tt>paon</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/paon">paon</a></td>
+                        <td>Primary Addressable Object Name (PAON), typically building name or street number (see BS7666).</td>
+                    </tr>
+                    <tr>
+                        <td><tt>saon</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/saon">saon</a></td>
+                        <td>Secondary Addressable Object Name (SAON), e.g. flat number (see BS7666).</td>
+                    </tr>
+                    <tr>
+                        <td><tt>street</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/street">street</a></td>
+                        <td>Name of any thoroughfare in England and Wales which is the first or only street name in an address.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>locality</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/locality">locality</a></td>
+                        <td>Name of a place which is either a hamlet / village in a rural area or a subdivision of a town / city in an urban area.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>town</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/town">town</a></td>
+                        <td>Name of an urban area.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>county</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/county">county</a></td>
+                        <td>Name of a geographic area which comprises either a current of former county in England of Wales or a Unitary Authority.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>postcode</tt></td>
+                        <td><a href="http://landregistry.data.gov.uk/def/common/postcode">postcode</a></td>
+                        <td>Postcode.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

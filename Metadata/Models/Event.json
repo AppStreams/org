@@ -1,0 +1,31 @@
+﻿{
+  "Event": {
+    "type": "object",
+    "required": [
+      "@id",
+      "name"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models"
+      },
+      "@type": {
+        "type": "string",
+        "default": "Event"
+      },      
+      "id": {
+        "description": "A unqiue id for this event.",
+        "type": "string",
+        "format": "uuid",
+        "example": "11cfeeb8-aefd-4f2b-8cb0-b3186870ad14"
+      },
+      "filter": {
+        "type": "object",
+        "description": "Event specific data.",
+        "$ref": "Filter.json#/Filter"
+      }
+    }
+  }
+}

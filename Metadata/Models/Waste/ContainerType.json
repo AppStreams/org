@@ -1,0 +1,44 @@
+﻿{
+  "ContainerType": {
+    "type": "object",
+    "required": [
+      "reusable"
+    ],
+    "properties": {
+      "reusable": {
+        "type": "boolean",
+        "description": "Whether this container can be reused."
+      },
+      "disposable": {
+        "type": "boolean",
+        "description": "If container is disposable."
+      },
+      "color": {
+        "type": "https://schema.org/Color",
+        "description": "General color of the container."
+      },
+      "lid_color": {
+        "type": "https://schema.org/Color",
+        "description": "In case its different to the body color."
+      },
+      "sizes": {
+        "type": "array",
+        "description": "What container sizes are available. Relevant if ordering new containers.",
+        "items": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "shape": {
+        "type": "string",
+        "description": "The shape or type of the container."
+      },
+      "materials": {
+        "type": "array",
+        "items": {
+          "$ref": "Material.json#/Material"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+﻿<div class="row" id="service-getServices">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Get the list of bin services schedules for the location</h4>
+                <p>
+                    Returns the unique list of collection combinations scheduled for this location. Therefore if Brown and Blue are picked up at the same time, it will return these as a single service instance. If Brown and Blue are picked up this week and Green is next week, that would return two service instances.
+                </p>
+                <p>
+                    <small class="text-muted">
+                        <span data-feather="info" style="width:15px;height:auto;"></span>
+                        Note that you must provide some valid context for location, such as the country and postcode
+                        or you will get an error.
+                    </small>
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services/Waste/Services?{location}&{paging}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>location</tt></td>
+                            <td><a href="/services/parameters">Location</a></td>
+                            <td>true</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters">Common Location Parameter</a></td>
+                        </tr>
+                        <tr>
+                            <td><tt>paging</tt></td>
+                            <td><a href="/services/parameters">Paging</a></td>
+                            <td>false</td>
+                            <td></td>
+                            <td>See the <a href="/services/parameters">Common Paging Parameter</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/Waste/Services?country=gb&postcode=g131sj</pre>
+                </div>
+
+                <p class="text-success"><strong>Example Responses</strong></p>
+                <p>HTTP code: 200</p>
+                <div class="jumbotron" style="padding:0;"><pre>@org.appstreams.Utility.ReadFromFile("waste/services/samples/getServices.json")</pre></div>
+            </div>
+        </div>
+    </div>
+</div>

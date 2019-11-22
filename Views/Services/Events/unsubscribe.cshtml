@@ -1,0 +1,53 @@
+﻿<div class="row" id="services-unsubscribe">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Unsubscribes from a subscription</h4>
+                <p>
+                    Unsubscribes a user Id from a subscription - the definition of the unique userId is system specific.
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest post">post</span>
+                    <span>/services/events/unsubscribe</span>
+                </div>
+                <p><strong>Request parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>subscriptionId</tt></td>
+                            <td>string</td>
+                            <td>true</td>
+                            <td></td>
+                            <td>The id of the subscription to remove.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-primary"><strong>Returns</strong></p>
+                <p>
+                    Returns HTTP 200 success or a HTTP 400 error if an exception occurs.
+                </p>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Request:</p>
+                <pre>http://appstreams.org/services/events/unsubscribe</pre>
+                <div class="jumbotron" style="padding:0;">                    
+                    <pre>
+{
+    "subscriptionId": "5ce7a728-9aac-430f-9c49-f729ad5a5963"
+}
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

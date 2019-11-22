@@ -1,0 +1,52 @@
+﻿<div class="row" id="services-subscription">
+    <div class="col-12">
+        <div id="services">
+            <div class="api-service">
+                <h4>Gets the specified subscription</h4>
+                <p>
+                    This returns the detail of the specified subscription.
+                </p>
+                <div class="api-svc">
+                    <span class="api-rest get">get</span>
+                    <span>/services/subscription/{subscriptionId}</span>
+                </div>
+                <p><strong>Query parameters</strong></p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>                            
+                            <th>Required</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><tt>subscriptionId</tt></td>
+                            <td>string</td>
+                            <td>true</td>
+                            <td></td>
+                            <td>The id for the subscription.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-primary"><strong>Returns</strong></p>
+                <p>
+                    Returns a <a href="/models/Subscription">Subscription</a>.
+                </p>
+
+                <p class="text-info"><strong>Example Requests</strong></p>
+                <p>Query:</p>
+                <div class="jumbotron" style="padding:0;">
+                    <pre>http://appstreams.org/services/subscription/09afeeb8-aefd-4f2b-8cb0-b3186870ad14</pre>
+                </div>
+
+                <p class="text-success"><strong>Example Responses</strong></p>
+                <p>HTTP code: 200</p>
+                <div class="jumbotron" style="padding:0;"><pre>@org.appstreams.Utility.ReadFromFile("samples/getSubscription.json")</pre></div>
+            </div>
+        </div>
+    </div>
+</div>
