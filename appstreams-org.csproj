@@ -58,6 +58,7 @@
     <Folder Include="wwwroot\Metadata\Services\Events\" />
     <Folder Include="Metadata\Services\Events\" />
     <Folder Include="Views\Models\Filter\" />
+    <Folder Include="Views\Taxonomies\EventTypes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Models\Waste\Container-Type-sample %28copy%29.json" />
