@@ -7,6 +7,12 @@
 <p>
     This Filter is set as the <b>filter</b> property on an <a href="/models/Event">Event</a> or a <a href="/models/Subscription">Subscription</a>.
 </p>
+<p>
+    This requires one of the following event types to be set as the <b>data</b> property:
+    <ul>
+        <li><a href="/models/Waste/Event">Waste Event</a></li>
+    </ul>
+</p>
 <div class="row">
     <div class="col-12">
         <div class="datamodel">
@@ -28,11 +34,6 @@
                         <td><tt>@@type</tt></td>
                         <td><a href="Filter">Filter</a></td>
                         <td>A Filter type.</td>
-                    </tr>
-                    <tr>
-                        <td><tt>@@id</tt></td>
-                        <td><a href="http://schema.org/URL">URL</a></td>
-                        <td>A dereferencable Id for this filter</td>
                     </tr>
                     <tr>
                         <td><tt>id</tt></td>

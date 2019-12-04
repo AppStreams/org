@@ -1,16 +1,10 @@
 ﻿@{ViewData["Title"] = "Models - Event";}
 <h3>@ViewData["Title"]</h3>
 <p>
-   This represents an abstract event. This may be an event that may happen in the future or has happened in the past.
+   This represents an event. This may be an something that may happen in the future or has happened in the past, independent of consumers and who may want to know.
 </p>
 <p>
     It will contain a <a href="/models/Filter">Filter</a> that determines what the Event context is. This Filter will be based on the filter set in a user <a href="/models/Subscription">Subscription</a>.
-</p>
-<p>
-    This requires one of the following <b>filter</b> properties must be set:
-    <ul>
-        <li><a href="/models/Waste/Event">Waste Event</a></li>
-    </ul>
 </p>
 <div class="row">
     <div class="col-12">
@@ -43,6 +37,11 @@
                         <td><tt>filter</tt></td>
                         <td><a href="Filter">Filter</a></td>
                         <td>A filter instance as context for this event.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>regularity</tt></td>
+                        <td><a href="/models/Regularity">Regularity</a></td>
+                        <td>How often to run this event.</td>
                     </tr>
                 </tbody>
             </table>

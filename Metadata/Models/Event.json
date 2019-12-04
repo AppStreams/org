@@ -14,7 +14,7 @@
       "@type": {
         "type": "string",
         "default": "Event"
-      },      
+      },
       "id": {
         "description": "A unqiue id for this event.",
         "type": "string",
@@ -25,6 +25,13 @@
         "type": "object",
         "description": "Event specific data.",
         "$ref": "Filter.json#/Filter"
+      },
+      "regularity": {
+        "type": "array",
+        "description": "An array of schedules or natural schedules for this item.",
+        "items": {
+          "$ref": "Regularity.json#/Regularity"
+        }
       }
     }
   }

@@ -1,0 +1,8 @@
+﻿{
+  "@context": "http://appstreams.org/models",
+  "@type": "Regularity",
+  "name": "2 days before [qualified filter context] is to happen",
+  "unit": "days",
+  "direction": "before",
+  "value": 2
+}

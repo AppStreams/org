@@ -1,15 +1,11 @@
 ﻿@{ViewData["Title"] = "Models - Subscription";}
 <h3>@ViewData["Title"]</h3>
 <p>
-   This represents an abstract subscription. It will contain a <a href="/models/Filter">Filter</a> that determines what the user is subscribing to. <a href="/models/Event">Events</a> emitted will have this <a href="/models/Filter">Filter</a> set within their body.
+   This represents a subscription which is what and how often a consumer wants Events.   
 </p>
 <p>
-    This requires one of the following <b>filter</b> properties to be set:
-    <ul>
-        <li><a href="/models/Waste/Event">Waste Event</a></li>
-    </ul>
+    It will contain a <a href="/models/Filter">Filter</a> that determines what the user is subscribing to. <a href="/models/Event">Events</a> emitted will have the <a href="/models/Filter">Filter</a> set to determine their context.
 </p>
-
 <div class="row">
     <div class="col-12">
         <div class="datamodel">
@@ -44,8 +40,13 @@
                     </tr>
                     <tr>
                         <td><tt>filter</tt></td>
-                        <td><a href="models/Filter">Filter</a></td>
+                        <td><a href="/models/Filter">Filter</a></td>
                         <td>A filter instance as context for this subscription.</td>
+                    </tr>
+                    <tr>
+                        <td><tt>regularity</tt></td>
+                        <td>Array of <a href="/models/Regularity">Regularity</a></td>
+                        <td>How often to run this subscription.</td>
                     </tr>
                 </tbody>
             </table>

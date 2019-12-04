@@ -9,5 +9,44 @@
     "id": "55afeeb8-aefd-4f2b-8cb0-b3186870ad14",
     "name": "Waste Collection",
     "type": [ "http://appstreams.org/taxonomies/EventTypes/Waste/planned_collection" ]
-  }
+  },
+  "regularity": [
+    {
+      "@context": "http://appstreams.org/models",
+      "@type": "Regularity",
+      "schedule": {
+        "@type": "schema:Schedule",
+        "schema:repeatFrequency": "P2W",
+        "schema:byDay": [ "http://schema.org/Tuesday" ],
+        "schema:startTime": "08:00"
+      },
+      "name": "Every 2 weeks on the Tuesday around 8am"
+    },
+    {
+      "@context": "http://appstreams.org/models",
+      "@type": "Regularity",
+      "name": "2 days before [qualified filter context] is to happen",
+      "unit": "days",
+      "direction": "before",
+      "value": 2
+    },
+    {
+      "@context": "http://appstreams.org/models",
+      "@type": "Regularity",
+      "schedule": {
+        "@type": "schema:Schedule",
+        "schema:startTime": "08:00"
+      },
+      "name": "2 days before [qualified filter context] is to happen around 8AM",
+      "unit": "days",
+      "direction": "before",
+      "value": 2
+    },
+    {
+      "@context": "http://appstreams.org/models",
+      "@type": "Regularity",
+      "name": "10 mins before qualified filter context arrives",
+      "natural": "10 mins before [qualified filter context] arrives"
+    }
+  ]
 }

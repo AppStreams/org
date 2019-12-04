@@ -1,8 +1,8 @@
-﻿@{ViewData["Title"] = "Waste Models - Event";}
+﻿@{ViewData["Title"] = "Waste Event";}
 <h3>@ViewData["Title"]</h3>
 <p>
-    This waste event <b>must</b> be set as the <i>data</i> property of a general <a href="/models/Event">Event</a> type.
-    The properties below can be set as the content of that data property.
+    This waste event <b>must</b> be set as the <b>data</b> property of a <a href="/models/Filter">Filter</a> that is attached to an <a href="/models/Event">Event</a> or
+    <a href="/models/Subscription">Subscription</a>.
 </p>
 
 <div class="row">
@@ -34,7 +34,7 @@
                     </tr>
                     <tr>
                         <td>location</td>
-                        <td><a href="http://schema.org/location">location</a></td>
+                        <td><a href="/models/Place">Place</a></td>
                         <td>Location of the event target.</td>
                     </tr>
                     <tr>

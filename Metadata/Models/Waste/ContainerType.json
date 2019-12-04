@@ -21,6 +21,10 @@
         "type": "https://schema.org/Color",
         "description": "In case its different to the body color."
       },
+      "info_url": {
+        "type": "https://schema.org/URL",
+        "description": "A URL to more info on this feature type."
+      },
       "sizes": {
         "type": "array",
         "description": "What container sizes are available. Relevant if ordering new containers.",

@@ -6,6 +6,7 @@
   "color": "blue",
   "shape": "wheelie_bin",
   "sizes": [ 180, 240 ],
+  "info_url": "https://www.glasgow.gov.uk/article/16561/Blue-Bin-Recycling",
   "materials": [
     {
       "@type": "Material",

@@ -1,0 +1,102 @@
+﻿@{ViewData["Title"] = "Models - Regularity";}
+<h3>@ViewData["Title"]</h3>
+<p>
+   Defines how often something should happen, whether according to a Schedule or other regular logic.
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="datamodel">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>                            
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr>
+                        <td><tt>@@context</tt></td>
+                        <td><a href="http://schema.org/URL">URL</a></td>
+                        <td>http://appstreams.org/models</td>
+                    </tr>
+                    <tr>
+                        <td><tt>@@type</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>Regularity</td>
+                    </tr>
+                    <tr>
+                        <td><tt>id</tt></td>
+                        <td><a href="http://schema.org/Text">string</a></td>
+                        <td>A unique Id for this event instance</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            schedule
+                        </td>
+                        <td>
+                            <a href="http://schema.org/Schedule">Schedule</a>
+                        </td>
+                        <td>
+                            The schedule for this item, if one applies.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            unit
+                        </td>
+                        <td>
+                            <a href="http://schema.org/Text">Text</a>
+                        </td>
+                        <td>
+                            The unit of direction - "default", "morning", "week", "day", "hour"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            direction
+                        </td>
+                        <td>
+                            <a href="http://schema.org/Text">Text</a>
+                        </td>
+                        <td>
+                            The direction relative to the unit value - "before", "after"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            value
+                        </td>
+                        <td>
+                            <a href="http://schema.org/Text">Text</a>
+                        </td>
+                        <td>
+                            The value for the unit direction - 2,3 etc - e.g. "2 weeks after"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            natural
+                        </td>
+                        <td>
+                            <a href="http://schema.org/Text">Text</a>
+                        </td>
+                        <td>
+                            A natural schedule that an interpreter can parse - e.g. "10 mins before it arrives"
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h3>Schema</h3>
+<pre>
+@Html.Raw(ViewBag.Json)
+</pre>
+
+<h3>Example</h3>
+<pre>
+@Html.Raw(ViewBag.JsonSample)
+</pre>

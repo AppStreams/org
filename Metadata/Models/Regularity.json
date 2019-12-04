@@ -1,0 +1,44 @@
+﻿{
+  "Regularity": {
+    "type": "object",
+    "required": [
+      "@id",
+      "name"
+    ],
+    "properties": {
+      "@context": {
+        "type": "string",
+        "format": "uri",
+        "default": "http://appstreams.org/models"
+      },
+      "@type": {
+        "type": "string",
+        "default": "Regularity"
+      },
+      "id": {
+        "description": "A unique Id for this event instance.",
+        "type": "string"
+      },
+      "schedule": {
+        "type": "http://schema.org/Schedule",
+        "description": "The schedule for this item, if one applies."
+      },
+      "unit": {
+        "description": "\"The unit of direction - \"default\", \"morning\", \"week\", \"day\", \"hour\"\"",
+        "type": "string"
+      },
+      "direction": {
+        "description": "\"The direction relative to the unit value - \"before\", \"after\"\"",
+        "type": "string"
+      },
+      "value": {
+        "description": "The value for the unit direction - 2,3 etc - e.g. 2 weeks after",
+        "type": "string"
+      },
+      "natural": {
+        "description": "A natural schedule that an interpreter can parse - e.g. 10 mins before it arrives",
+        "type": "string"
+      }
+    }
+  }
+}

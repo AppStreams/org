@@ -11,7 +11,7 @@
   "schedule": {
     "@type": "schema:Schedule",
     "schema:repeatFrequency": "P2W",
-    "schema:byDay": "http://schema.org/Tuesday",
+    "schema:byDay": [ "http://schema.org/Tuesday" ],
     "schema:exceptDate": [
       "2019-01-01",
       "2019-12-25"
@@ -22,6 +22,13 @@
     "schema:startDate": "2019-01-01",
     "schema:endDate": "2019-12-31"
   },
+  "next_collections": [
+    {
+      "@type": "EmptyBinTask",
+      "@id": "http://appstreams.org/services/Waste/Tasks/gGcfeeb8-aefd-4f2b-8cb0-b3186870ad14",
+      "start_date": "2019-12-25"
+    }
+  ],
   "feature_types": [
     {
       "@id": "00cfeeb8-aefd-4f2b-8cb0-b3186870ad14",

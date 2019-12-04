@@ -59,6 +59,7 @@
     <Folder Include="Metadata\Services\Events\" />
     <Folder Include="Views\Models\Filter\" />
     <Folder Include="Views\Taxonomies\EventTypes\" />
+    <Folder Include="Views\Models\Regularity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Models\Waste\Container-Type-sample %28copy%29.json" />
@@ -69,7 +70,7 @@
     <Content Remove="Views\Events %28copy%29\Waste\Index.cshtml" />
     <Content Remove="Views\Events %28copy%29\Waste\Services\Index.cshtml" />
     <Content Remove="Metadata\Models\Event-sample %28copy%29.json" />
-    <Content Remove="Metadata\Models\EventType-sample %28copy%29.json" />
+    <Content Remove="Metadata\Models\Regularity-sample %28copy%29.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />

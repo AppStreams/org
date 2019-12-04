@@ -31,6 +31,13 @@
         "type": "object",
         "description": "Event specific data.",
         "$ref": "Filter.json#/Filter"
+      },
+      "regularity": {
+        "type": "array",
+        "description": "An array of schedules or natural schedules for this item.",
+        "items": {
+          "$ref": "Regularity.json#/Regularity"
+        }
       }
     }
   }

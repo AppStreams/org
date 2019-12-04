@@ -63,6 +63,10 @@
         "format": "date",
         "description": "The actual start date."
       },
+      "service": {
+        "type": "Service.json#/Service",
+        "description": "The Service this Task is associated with."
+      },
       "features": {
         "type": "array",
         "description": "List of related features.",

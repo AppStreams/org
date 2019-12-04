@@ -11,7 +11,7 @@
   "schedule": {
     "@type": "schema:Schedule",
     "schema:repeatFrequency": "P2W",
-    "schema:byDay": "http://schema.org/Tuesday",
+    "schema:byDay": [ "http://schema.org/Tuesday" ],
     "schema:exceptDate": [
       "2019-01-01",
       "2019-12-25"
